@@ -2,6 +2,7 @@ require 'json'
 require 'httparty'
 require 'test/unit'
 require 'mocha/test_unit'
+require 'pry'
 
 require_relative '../../seed_company/app'
 

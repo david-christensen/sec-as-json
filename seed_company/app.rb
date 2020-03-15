@@ -1,7 +1,5 @@
 require 'dotenv/load'
 require 'json'
-require 'pry'
-binding.pry
 require_relative 'db'
 require_relative 'response'
 require_relative 'sec_on_jets_api'
@@ -36,8 +34,6 @@ def lambda_handler(event:, context:)
   # end
 
   return Response.bad_request(message: "Company ticker must be provided!") unless params.ticker
-
-  binding.pry
 
   company, errors = SecOnJetsAPI::Company.get(id: params.ticker)
 
