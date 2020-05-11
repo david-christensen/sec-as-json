@@ -3,5 +3,6 @@ source "https://rubygems.org"
 gem "httparty"
 gem 'graphql-client'
 gem 'dotenv'
+gem 'dynamoid'
 
 ruby '~> 2.7.0'

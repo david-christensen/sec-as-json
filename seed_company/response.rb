@@ -2,6 +2,7 @@ module Response
   class << self
     def response(response:, status_code: 200)
       {
+        headers: {'Content-Type': 'application/json'},
         statusCode: status_code,
         body: response.to_json
       }

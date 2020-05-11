@@ -3,20 +3,19 @@ require 'httparty'
 require 'test/unit'
 require 'mocha/test_unit'
 require 'pry'
+require 'dotenv/load'
 
 require_relative '../../seed_company/app'
 
 class SeedCompanyTest < Test::Unit::TestCase
   def event
     {
-      body: 'eyJ0ZXN0IjoiYm9keSJ9',
+      body: "{\n\t\"ticker\": \"BRKB\"\n}",
       resource: '/{proxy+}',
       path: '/path/to/resource',
       httpMethod: 'POST',
       isBase64Encoded: true,
-      queryStringParameters: {
-        ticker: 'AAPL'
-      },
+      queryStringParameters: nil,
       pathParameters: {
         proxy: '/path/to/resource'
       },
@@ -80,15 +79,24 @@ class SeedCompanyTest < Test::Unit::TestCase
   end
 
   def expected_result
-    {
-      :body=>
-        "{\"ticker\":\"AAPL\",\"cik\":\"0000320193\",\"name\":\"Apple Inc.\",\"cusip\":\"037833100\",\"formerNames\":[{\"date\":\"2007-01-04\",\"name\":\"APPLE COMPUTER INC\"},{\"date\":\"1997-07-28\",\"name\":\"APPLE COMPUTER INC/ FA\"},{\"date\":\"2019-08-05\",\"name\":\"APPLE INC\"}],\"assitantDirector\":null,\"sicCode\":\"3571\",\"sicIndustryTitle\":\"ELECTRONIC COMPUTERS\",\"sicListHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=3571&owner=include&count=40\",\"stateOfIncorporation\":\"CA\",\"stateLocation\":\"CA\",\"stateLocationHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CA&owner=include&count=40\",\"cikHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193&owner=include&count=40\",\"businessAddress\":{\"type\":\"business\",\"city\":\"CUPERTINO\",\"state\":\"CA\",\"zip\":\"95014\",\"street1\":\"ONE APPLE PARK WAY\",\"street2\":null,\"phone\":\"(408) 996-1010\"},\"mailingAddress\":{\"type\":\"mailing\",\"city\":\"CUPERTINO\",\"state\":\"CA\",\"zip\":\"95014\",\"street1\":\"ONE APPLE PARK WAY\",\"street2\":null,\"phone\":null}}",
-      :statusCode=>200
+    {:body=>
+       "{\"ticker\":\"BRKB\",\"cik\":\"0000320193\",\"name\":\"Apple Inc.\",\"cusip\":\"037833100\",\"formerNames\":[{\"date\":\"2007-01-04\",\"name\":\"APPLE COMPUTER INC\"},{\"date\":\"1997-07-28\",\"name\":\"APPLE COMPUTER INC/ FA\"},{\"date\":\"2019-08-05\",\"name\":\"APPLE INC\"}],\"assitantDirector\":null,\"sicCode\":\"3571\",\"sicIndustryTitle\":\"ELECTRONIC COMPUTERS\",\"sicListHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=3571&owner=include&count=40\",\"stateOfIncorporation\":\"CA\",\"stateLocation\":\"CA\",\"stateLocationHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CA&owner=include&count=40\",\"cikHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193&owner=include&count=40\",\"businessAddress\":{\"type\":\"business\",\"city\":\"CUPERTINO\",\"state\":\"CA\",\"zip\":\"95014\",\"street1\":\"ONE APPLE PARK WAY\",\"street2\":null,\"phone\":\"(408) 996-1010\"},\"mailingAddress\":{\"type\":\"mailing\",\"city\":\"CUPERTINO\",\"state\":\"CA\",\"zip\":\"95014\",\"street1\":\"ONE APPLE PARK WAY\",\"street2\":null,\"phone\":null}}",
+     :headers=>{:"Content-Type"=>"application/json"},
+     :statusCode=>200
     }
   end
 
-  def test_lambda_handler
+  def test_handler
     # HTTParty.expects(:get).with('http://checkip.amazonaws.com/').returns(mock_response)
-    assert_equal(lambda_handler(event: event, context: ''), expected_result)
+    # assert_equal(handler(event: event, context: ''), expected_result)
+    # handler(event: event, context: '')
+    # company = Filings.first
+    # company = Filings.where('type.begins_with': 'country-').all.first
+
+    filings = Filings.find_by_cik('0001067983')&.to_a || []
+    binding.pry
+    Filings.find(company.cik)
+    company.destroy
+    # TODO - Company.find_by_id('0000320193').destroy
   end
 end
