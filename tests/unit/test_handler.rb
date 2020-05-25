@@ -5,7 +5,7 @@ require 'mocha/test_unit'
 require 'pry'
 require 'dotenv/load'
 
-require_relative '../../seed_company/app'
+require_relative '../../lambda_source/app'
 
 class SeedCompanyTest < Test::Unit::TestCase
   def event
@@ -86,17 +86,51 @@ class SeedCompanyTest < Test::Unit::TestCase
     }
   end
 
-  def test_handler
-    # HTTParty.expects(:get).with('http://checkip.amazonaws.com/').returns(mock_response)
-    # assert_equal(handler(event: event, context: ''), expected_result)
-    # handler(event: event, context: '')
-    # company = Filings.first
-    # company = Filings.where('type.begins_with': 'country-').all.first
+  def brkb_response
+    {
+      :metadata => "company",
+      :tradingSymbol => "BRKB",
+      :cik => "0001067983",
+      :name => "BERKSHIRE HATHAWAY INC",
+      :cusip => "084670702",
+      :formerNames => [{:date => "1999-01-05", :name => "NBH INC"}],
+      :assistantDirector => nil,
+      :sicCode => "6331",
+      :sicIndustryTitle => "FIRE, MARINE &amp; CASUALTY INSURANCE",
+      :sicListHref => "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=6331&owner=include&count=40",
+      :stateOfIncorporation => "DE",
+      :stateLocation => "NE",
+      :stateLocationHref => "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NE&owner=include&count=40",
+      :cikHref => "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001067983&owner=include&count=40",
+      :businessAddress => {:type => "business", :city => "OMAHA", :state => "NE", :zip => "68131", :street1 => "3555 FARNAM STREET", :street2 => nil, :phone => "4023461400"},
+      :mailingAddress => {:type => "mailing", :city => "OMAHA", :state => "NE", :zip => "68131", :street1 => "3555 FARNAM STREET", :street2 => nil, :phone => nil}
+    }
+  end
 
-    filings = Filings.find_by_cik('0001067983')&.to_a || []
-    binding.pry
-    Filings.find(company.cik)
+  def test_handler
+    handler_response = handler(event: event, context: '') # creates record
+    parsed_response = JSON.parse(handler_response[:body]).deep_symbolize_keys
+    assert_equal(parsed_response.except(:updated_at), brkb_response)
+
+    handler(event: event, context: '') # merges existing record
+
+    company = Company.find('0001067983')
+    filings = Filings.find_by_cik(company.cik)
+    company_filings = filings.select {|f| f.is_a?(Company)}
+    assert_true(company.is_a?(Company))
+    assert_true(company.is_a?(Filings))
+    assert_true(filings.count > 0)
+    assert_equal(company_filings.count, 1) # creates exactly 1 company record
+    assert_true(filings.include?(company))
+
     company.destroy
-    # TODO - Company.find_by_id('0000320193').destroy
+
+    begin
+      Company.find('0001067983')
+    rescue Dynamoid::Errors::RecordNotFound => e
+    end
+
+    assert_true(e.is_a?(Dynamoid::Errors::RecordNotFound))
+    assert_equal(e.to_s, "Couldn't find Company with primary key (0001067983,company)")
   end
 end

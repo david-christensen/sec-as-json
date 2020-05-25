@@ -41,17 +41,12 @@ class Filings
   def self.find_by_cik(cik)
     chain = where(cik: cik)
     chain.query.reject! {|k, _v| k == :"metadata.in"}
-    filings = chain.all
-  end
-
-  def constantize(camel_cased_word)
-    binding.pry
-    super(camel_cased_word.split('-').first.capitalize)
+    chain.all.to_a
   end
 end
 
 class Company < Filings
-  # field :metadata, :string, default: -> { "company-#{SecureRandom.uuid}" }
+  field :metadata, :string, default: -> { "company" }
   field :name
   field :cusip
   field :tradingSymbol
@@ -70,13 +65,12 @@ class Company < Filings
   class << self
     alias_method :old_find, :find
 
-    def find(cik, metadata)
-      old_find(cik, range_key: metadata)
+    def find(cik)
+      old_find(cik, range_key: 'company')
     end
 
     def merge_or_create(data)
-      # company = find(cik: data[:cik]) || new(data)
-      company = new(data)
+      company = find(cik: data[:cik]) || new(data)
       [company.persisted? ? company.update_attributes(data) : company.save, company]
     end
   end
@@ -96,6 +90,14 @@ class HedgeFund < Filings
   field :stateLocation
   field :stateLocationHref
   field :stateOfIncorporation
+
+  class << self
+    alias_method :old_find, :find
+
+    def find(cik)
+      old_find(cik, range_key: 'hedge-fund')
+    end
+  end
 end
 
 class TrackedFiling < Filings
@@ -105,4 +107,10 @@ class TrackedFiling < Filings
 
   validates_presence_of :type
   validates_presence_of :fund_name
+
+  def self.find_by_cik(cik)
+    chain = where(cik: cik)
+    chain.query.reject! {|k, _v| k == :"metadata.in"}.merge!(:"metadata.begins_with" => "tracked-filing-")
+    chain.all.to_a
+  end
 end
