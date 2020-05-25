@@ -1,6 +1,5 @@
 require 'json'
 require 'httparty'
-require 'mocha/test_unit'
 require 'pry'
 require 'dotenv/load'
 

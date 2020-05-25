@@ -1,11 +1,4 @@
-require 'json'
-require 'httparty'
-require 'test/unit'
-require 'mocha/test_unit'
-require 'pry'
-require 'dotenv/load'
-
-require_relative '../lambda_source/app'
+require_relative 'spec_helper'
 
 RSpec.describe 'app' do
   let (:event) do

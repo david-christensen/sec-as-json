@@ -108,9 +108,13 @@ class TrackedFiling < Filings
   validates_presence_of :type
   validates_presence_of :fund_name
 
-  def self.find_by_cik(cik)
-    chain = where(cik: cik)
+  def self.where(*args)
+    chain = super(*args)
     chain.query.reject! {|k, _v| k == :"metadata.in"}.merge!(:"metadata.begins_with" => "tracked-filing-")
-    chain.all.to_a
+    chain
+  end
+
+  def self.find_by_cik(cik)
+    where(cik: cik).all.to_a
   end
 end
