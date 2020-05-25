@@ -5,7 +5,7 @@ require_relative 'sec_on_jets_api'
 require_relative 'seed_company_params'
 
 class SeedCompany
-  def self.handle_event(event:, context:)
+  def self.handler(event:, context:)
     puts "event: #{event}"
     puts "context: #{context}"
     params = SeedCompanyParams.new(event: event, context: context)

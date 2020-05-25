@@ -100,12 +100,12 @@ sec-as-json$ sam logs -n HelloWorldFunction --stack-name sec-as-json --tail
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
 
-## Unit tests
+## Tests
 
-Tests are defined in the `tests` folder in this project.
+Tests are defined in the `specs` folder in this project.
 
 ```bash
-sec-as-json$ ruby tests/unit/test_handler.rb
+sec-as-json$ rspec
 ```
 
 ## Cleanup

@@ -5,10 +5,10 @@ require 'mocha/test_unit'
 require 'pry'
 require 'dotenv/load'
 
-require_relative '../../lambda_source/app'
+require_relative '../lambda_source/app'
 
-class SeedCompanyTest < Test::Unit::TestCase
-  def event
+RSpec.describe 'app' do
+  let (:event) do
     {
       body: "{\n\t\"ticker\": \"BRKB\"\n}",
       resource: '/{proxy+}',
@@ -71,14 +71,14 @@ class SeedCompanyTest < Test::Unit::TestCase
     }
   end
 
-  def mock_response
+  let (:mock_response) do
     Object.new.tap do |mock|
       mock.expects(:code).returns(200)
       mock.expects(:body).returns('1.1.1.1')
     end
   end
 
-  def expected_result
+  let(:expected_result) do
     {:body=>
        "{\"ticker\":\"BRKB\",\"cik\":\"0000320193\",\"name\":\"Apple Inc.\",\"cusip\":\"037833100\",\"formerNames\":[{\"date\":\"2007-01-04\",\"name\":\"APPLE COMPUTER INC\"},{\"date\":\"1997-07-28\",\"name\":\"APPLE COMPUTER INC/ FA\"},{\"date\":\"2019-08-05\",\"name\":\"APPLE INC\"}],\"assitantDirector\":null,\"sicCode\":\"3571\",\"sicIndustryTitle\":\"ELECTRONIC COMPUTERS\",\"sicListHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=3571&owner=include&count=40\",\"stateOfIncorporation\":\"CA\",\"stateLocation\":\"CA\",\"stateLocationHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CA&owner=include&count=40\",\"cikHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193&owner=include&count=40\",\"businessAddress\":{\"type\":\"business\",\"city\":\"CUPERTINO\",\"state\":\"CA\",\"zip\":\"95014\",\"street1\":\"ONE APPLE PARK WAY\",\"street2\":null,\"phone\":\"(408) 996-1010\"},\"mailingAddress\":{\"type\":\"mailing\",\"city\":\"CUPERTINO\",\"state\":\"CA\",\"zip\":\"95014\",\"street1\":\"ONE APPLE PARK WAY\",\"street2\":null,\"phone\":null}}",
      :headers=>{:"Content-Type"=>"application/json"},
@@ -86,7 +86,7 @@ class SeedCompanyTest < Test::Unit::TestCase
     }
   end
 
-  def brkb_response
+  let(:brkb_response) do
     {
       :metadata => "company",
       :tradingSymbol => "BRKB",
@@ -107,30 +107,27 @@ class SeedCompanyTest < Test::Unit::TestCase
     }
   end
 
-  def test_handler
-    handler_response = handler(event: event, context: '') # creates record
+  it 'test_handler' do
+    handler_response = seed_company_handler(event: event, context: '') # creates record
     parsed_response = JSON.parse(handler_response[:body]).deep_symbolize_keys
-    assert_equal(parsed_response.except(:updated_at), brkb_response)
+    expect(parsed_response.except(:updated_at)).to eq brkb_response
 
-    handler(event: event, context: '') # merges existing record
+    seed_company_handler(event: event, context: '') # merges existing record
 
     company = Company.find('0001067983')
     filings = Filings.find_by_cik(company.cik)
     company_filings = filings.select {|f| f.is_a?(Company)}
-    assert_true(company.is_a?(Company))
-    assert_true(company.is_a?(Filings))
-    assert_true(filings.count > 0)
-    assert_equal(company_filings.count, 1) # creates exactly 1 company record
-    assert_true(filings.include?(company))
+    expect(company.is_a?(Company)).to be
+    expect(company.is_a?(Filings)).to be
+    expect(filings.count > 0).to be
+    expect(company_filings.count).to eq 1 # creates exactly 1 company record
+    expect(filings.include?(company)).to be
 
     company.destroy
 
-    begin
-      Company.find('0001067983')
-    rescue Dynamoid::Errors::RecordNotFound => e
+    expect { Company.find('0001067983') }.to raise_error do |error|
+      expect(error).to be_a Dynamoid::Errors::RecordNotFound
+      expect(error.to_s).to eq "Couldn't find Company with primary key (0001067983,company)"
     end
-
-    assert_true(e.is_a?(Dynamoid::Errors::RecordNotFound))
-    assert_equal(e.to_s, "Couldn't find Company with primary key (0001067983,company)")
   end
 end

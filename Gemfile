@@ -6,7 +6,6 @@ gem 'dotenv'
 gem 'dynamoid'
 
 group :test do
-  gem "test-unit"
   gem "rspec"
   gem "mocha"
   gem "pry"
