@@ -100,7 +100,34 @@ RSpec.describe 'app' do
     }
   end
 
-  it 'test_handler' do
+  it 'Handles Missing cik and ticker' do
+    handler_response = seed_company_handler(event: event.merge(body: nil), context: '')
+    expect(handler_response).to eq(
+     headers: {:"Content-Type"=>"application/json"},
+     statusCode: 400,
+     body: "{\"message\":\"Company ticker or cik must be provided!\"}"
+    ), handler_response
+  end
+
+  it 'Handles invalid ticker' do
+    handler_response = seed_company_handler(event: event.merge(body: "{\n\t\"ticker\": \"BRKBBRKBBRKBBRKB\"\n}"), context: '')
+    expect(handler_response).to eq(
+      headers: {:"Content-Type"=>"application/json"},
+      statusCode: 400,
+      body: "{\"message\":\"Invalid Company ticker provided!\"}"
+    ), handler_response
+  end
+
+  it 'Handles invalid cik' do
+    handler_response = seed_company_handler(event: event.merge(body: "{\n\t\"cik\": \"BRKBBRKBBRKBBRKB\"\n}"), context: '')
+    expect(handler_response).to eq(
+      headers: {:"Content-Type"=>"application/json"},
+      statusCode: 400,
+      body: "{\"message\":\"Invalid Company cik provided!\"}"
+    ), handler_response
+  end
+
+  it 'Seeds BRKB' do
     handler_response = seed_company_handler(event: event, context: '') # creates record
     parsed_response = JSON.parse(handler_response[:body]).deep_symbolize_keys
     expect(parsed_response.except(:updated_at)).to eq brkb_response
