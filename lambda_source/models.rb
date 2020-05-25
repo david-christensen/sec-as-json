@@ -1,5 +1,4 @@
 require 'dynamoid'
-require 'pry'
 Dynamoid.configure do |config|
   # To namespace tables created by Dynamoid from other tables you might have.
   # Set to nil to avoid namespacing.
@@ -7,7 +6,15 @@ Dynamoid.configure do |config|
 
   # [Optional]. If provided, it communicates with the DB listening at the endpoint.
   # This is useful for testing with [DynamoDB Local] (http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html).
-  config.endpoint = 'http://localhost:8000'
+
+  if ENV['SAM_ENV'] == 'production'
+    # Use DynamoDB
+  elsif ENV['SAM_ENV'] == 'test'
+    config.endpoint = 'http://localhost:8000'
+  else
+    # sam local api
+    config.endpoint = 'http://host.docker.internal:8000'
+  end
 end
 
 module Dynamoid::Document

@@ -1,7 +1,9 @@
 require 'json'
 require 'httparty'
 require 'pry'
-require 'dotenv/load'
+
+require 'dotenv'
+Dotenv.load('.env.rspec')
 
 require_relative '../lambda_source/app'
 

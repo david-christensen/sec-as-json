@@ -100,6 +100,13 @@ sec-as-json$ sam logs -n HelloWorldFunction --stack-name sec-as-json --tail
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
 
+## Environment Variables
+- Environment variables are specified for rspec in the `.env.rspec` file.
+
+- Environment variables are specified for local sam-api in the `.env.json` file.
+
+  -- NOTE: An environment variable in the `.env.json` must also exist in the function definition (of the `template.yml`) in order for local sam-api to use it.
+
 ## Tests
 
 Tests are defined in the `specs` folder in this project.

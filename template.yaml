@@ -21,6 +21,7 @@ Resources:
         Variables:
           SEC_ON_JETS_URL:
           SEC_ON_JETS_API_KEY:
+          SAM_ENV: production
       Events:
         SeedCompany:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
