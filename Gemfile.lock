@@ -19,6 +19,9 @@ GEM
     aws-sdk-dynamodb (1.45.0)
       aws-sdk-core (~> 3, >= 3.71.0)
       aws-sigv4 (~> 1.1)
+    aws-sdk-ssm (1.80.0)
+      aws-sdk-core (~> 3, >= 3.71.0)
+      aws-sigv4 (~> 1.1)
     aws-sigv4 (1.1.1)
       aws-eventstream (~> 1.0, >= 1.0.2)
     coderay (1.1.2)
@@ -48,7 +51,6 @@ GEM
     mocha (1.11.2)
     multi_xml (0.6.0)
     null-logger (0.1.5)
-    power_assert (1.1.6)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -65,8 +67,6 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
-    test-unit (3.3.5)
-      power_assert
     thread_safe (0.3.6)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
@@ -76,6 +76,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk-ssm
   dotenv
   dynamoid
   graphql-client
@@ -83,7 +84,6 @@ DEPENDENCIES
   mocha
   pry
   rspec
-  test-unit
 
 BUNDLED WITH
    2.1.2

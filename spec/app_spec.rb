@@ -1,9 +1,10 @@
 require_relative 'spec_helper'
 
 RSpec.describe 'app' do
+  let(:ticker) { 'BRKB' }
   let (:event) do
     {
-      body: "{\n\t\"ticker\": \"BRKB\"\n}",
+      body: "{\n\t\"ticker\": \"#{ticker}\"\n}",
       resource: '/{proxy+}',
       path: '/path/to/resource',
       httpMethod: 'POST',
@@ -127,7 +128,7 @@ RSpec.describe 'app' do
     ), handler_response
   end
 
-  it 'Seeds BRKB' do
+  xit 'Seeds BRKB' do
     handler_response = seed_company_handler(event: event, context: '') # creates record
     parsed_response = JSON.parse(handler_response[:body]).deep_symbolize_keys
     expect(parsed_response.except(:updated_at)).to eq brkb_response
@@ -148,6 +149,55 @@ RSpec.describe 'app' do
     expect { Company.find('0001067983') }.to raise_error do |error|
       expect(error).to be_a Dynamoid::Errors::RecordNotFound
       expect(error.to_s).to eq "Couldn't find Company with primary key (0001067983,company)"
+    end
+  end
+
+  context 'CWH' do
+    let(:ticker) { 'CWH' }
+
+    let(:cwh_response) do
+      {
+        :metadata => "company",
+        :tradingSymbol => "CWH",
+        :cik => "0001669779",
+        :name => "Camping World Holdings, Inc.",
+        :cusip => "13462K109",
+        :formerNames => nil,
+        :assistantDirector => nil,
+        :sicCode => "5500",
+        :sicIndustryTitle => "RETAIL-AUTO DEALERS &amp; GASOLINE STATIONS",
+        :sicListHref => "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=5500&owner=include&count=40",
+        :stateOfIncorporation => "DE",
+        :stateLocation => "IL",
+        :stateLocationHref => "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=IL&owner=include&count=40",
+        :cikHref => "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001669779&owner=include&count=40",
+        :businessAddress => {:city=>"LINCOLNSHIRE", :phone=>"(847) 808-3000", :state=>"IL", :street1=>"250 PARKWAY DRIVE", :street2=>"SUITE 270", :type=>"business", :zip=>"60048"},
+        :mailingAddress => {:city=>"LINCOLNSHIRE", :phone=>nil, :state=>"IL", :street1=>"250 PARKWAY DRIVE", :street2=>"SUITE 270", :type=>"mailing", :zip=>"60048"}
+      }
+    end
+
+    it 'Seeds CWH' do
+      handler_response = seed_company_handler(event: event, context: '') # creates record
+      parsed_response = JSON.parse(handler_response[:body]).deep_symbolize_keys
+      expect(parsed_response.except(:updated_at)).to eq cwh_response
+
+      seed_company_handler(event: event, context: '') # merges existing record
+
+      company = Company.find('0001669779')
+      filings = Filings.find_by_cik(company.cik)
+      company_filings = filings.select {|f| f.is_a?(Company)}
+      expect(company.is_a?(Company)).to be
+      expect(company.is_a?(Filings)).to be
+      expect(filings.count > 0).to be
+      expect(company_filings.count).to eq 1 # creates exactly 1 company record
+      expect(filings.include?(company)).to be
+
+      company.destroy
+
+      expect { Company.find('0001669779') }.to raise_error do |error|
+        expect(error).to be_a Dynamoid::Errors::RecordNotFound
+        expect(error.to_s).to eq "Couldn't find Company with primary key (0001669779,company)"
+      end
     end
   end
 end

@@ -1,3 +1,4 @@
+require_relative 'env_from_ssm' if ENV['SAM_ENV'] == 'production'
 require_relative 'seed_company_params'
 require_relative 'seed_company'
 

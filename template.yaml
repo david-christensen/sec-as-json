@@ -19,8 +19,6 @@ Resources:
       Runtime: ruby2.7
       Environment:
         Variables:
-          SEC_ON_JETS_URL:
-          SEC_ON_JETS_API_KEY:
           SAM_ENV: production
       Events:
         SeedCompany:

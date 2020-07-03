@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "httparty"
 gem 'graphql-client'
+gem 'aws-sdk-ssm'
 gem 'dotenv'
 gem 'dynamoid'
 
