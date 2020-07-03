@@ -45,4 +45,44 @@ module SecOnJetsAPI
       [result&.data&.company, result.errors]
     end
   end
+
+  module Filing
+    URL_QUERY = SecOnJetsAPI::Client.parse <<-'GRAPHQL'
+            query($id: String!,$url: String!) {
+              filingByLink(id: $id, link: $url) {
+                filerCik,
+                title,
+                summary, 
+                document{
+                ... on Form13FHr {type}
+                ... on Form4 {
+                        type, periodOfReport, subjectToSection16, 
+                        issuer {cik, name, tradingSymbol},
+                        reportingOwner {
+                          cik, name, isOfficer, officerTitle, isDirector, isOther, otherText,
+                          address {street1, street2, city, state,zip, stateDescription}
+                        },
+                        securities {type, transactionDate,coding{formType,code,equitySwapInvolved},
+                        amounts {shares, pricePerShare, acquiredDisposedCode},postTransactionAmounts{sharesOwned},
+                        ownershipNature {directOrIndirectOwnership}},
+                        footnotes,
+                        remarks
+                      }
+                },
+                detailHref,
+                type,
+                date,
+                secAccessionNumber
+              }
+            }
+          GRAPHQL
+
+
+    def self.get_by(id:, url:)
+      result = SecOnJetsAPI::Client.query(
+        URL_QUERY, variables: {id: id, url: url}
+      )
+      [result&.data&.find_by_link, result.errors]
+    end
+  end
 end
