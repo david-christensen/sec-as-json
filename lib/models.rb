@@ -53,6 +53,10 @@ class Filings
 end
 
 class Company < Filings
+  def self.name
+    'company'
+  end
+
   field :metadata, :string, default: -> { "company" }
   field :name
   field :cusip
@@ -74,6 +78,10 @@ class Company < Filings
 
     def find(cik)
       old_find(cik, range_key: 'company')
+    end
+
+    def find_by_ticker(ticker)
+      where(tradingSymbol: ticker)&.all&.first
     end
 
     def merge_or_create(data)

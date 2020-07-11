@@ -4,7 +4,6 @@ require "graphql/client/http"
 # Star Wars API example wrapper
 module SecOnJetsAPI
   # Configure GraphQL endpoint using the basic HTTP network adapter.
-  puts "ENV1 ::: #{ENV.inspect}"
   HTTP = GraphQL::Client::HTTP.new(ENV['SEC_ON_JETS_URL']) do
     def headers(context)
       # Optionally set any HTTP headers

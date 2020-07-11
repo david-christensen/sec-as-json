@@ -38,6 +38,42 @@ Resources:
           Properties:
             Path: /company/seed
             Method: post
+      Policies:
+        - AmazonDynamoDBFullAccess
+        - SSMParameterReadPolicy:
+            ParameterName: sec_on_jets/dev/SEC_ON_JETS_API_KEY
+        - SSMParameterReadPolicy:
+            ParameterName: sec_on_jets/dev/SEC_ON_JETS_URL
+
+  GetCompanyFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: get_company/
+      Handler: app.lambda_handler
+      Runtime: ruby2.7
+      Layers:
+      - !Ref GemsAndLibLayer
+      Environment:
+        Variables:
+          LAMBDA_ENV: production
+      Events:
+        GetCompanyByCik:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /company/{cik}
+            Method: get
+        GetCompanyByTicker:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /company/ticker/{ticker}
+            Method: get
+      Policies:
+      - AmazonDynamoDBFullAccess
+      - SSMParameterReadPolicy:
+          ParameterName: sec_on_jets/dev/SEC_ON_JETS_API_KEY
+      - SSMParameterReadPolicy:
+          ParameterName: sec_on_jets/dev/SEC_ON_JETS_URL
+
   FilingsTable:
     Type: AWS::DynamoDB::Table
     Properties:
