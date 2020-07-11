@@ -177,7 +177,7 @@ RSpec.describe SeedCompany do
       }
     end
 
-    it 'Seeds CWH' do
+    xit 'Seeds CWH' do
       handler_response = described_class.perform(event: event, context: '') # creates record
       parsed_response = JSON.parse(handler_response[:body]).deep_symbolize_keys
       expect(parsed_response.except(:updated_at)).to eq cwh_response

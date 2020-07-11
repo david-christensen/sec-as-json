@@ -11,15 +11,27 @@ Globals:
     Timeout: 30
 
 Resources:
+  GemsAndLibLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: gems-and-lib
+      Description: Layer of Bundled Gems and Lib Directory
+      ContentUri: layer/gems_and_lib
+      CompatibleRuntimes:
+      - ruby2.7
+      RetentionPolicy: Delete
+
   SeedCompanyFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
       CodeUri: seed_company/
       Handler: app.lambda_handler
       Runtime: ruby2.7
+      Layers:
+      - !Ref GemsAndLibLayer
       Environment:
         Variables:
-          SAM_ENV: production
+          LAMBDA_ENV: production
       Events:
         SeedCompany:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
