@@ -5,7 +5,10 @@ require 'pry'
 require 'dotenv'
 Dotenv.load('.env.rspec')
 
-require_relative '../lambda_source/app'
+PROJECT_ROOT = "#{File.realpath(File.dirname(__FILE__))}/../" unless defined? PROJECT_ROOT
+$LOAD_PATH.unshift "#{PROJECT_ROOT}/lib"
+
+require 'models'
 
 begin
   unless HedgeFund.count > 0

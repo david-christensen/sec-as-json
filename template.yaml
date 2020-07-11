@@ -14,8 +14,8 @@ Resources:
   SeedCompanyFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: lambda_source/
-      Handler: app.seed_company_handler
+      CodeUri: seed_company/
+      Handler: app.lambda_handler
       Runtime: ruby2.7
       Environment:
         Variables:

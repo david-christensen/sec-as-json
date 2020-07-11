@@ -1,3 +1,6 @@
+require 'json'
+require 'response'
+
 class SeedCompanyParams
   def initialize(event:, context:)
     @event = event
