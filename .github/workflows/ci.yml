@@ -37,7 +37,7 @@ jobs:
         run: ruby dbcreate.rb
 
       - name: Run RSpec
-        run: COVERAGE=true bundle exec rspec  --require rails_helper
+        run: rspec
         env:
           LAMBDA_ENV: test
           SEC_ON_JETS_URL: ${{ secrets.SEC_ON_JETS_URL }}
