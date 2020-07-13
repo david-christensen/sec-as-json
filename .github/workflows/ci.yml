@@ -1,0 +1,44 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+  pull_request: # all branches
+jobs:
+  rspecs:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: amazon/dynamodb-local
+        ports:
+        - 8000:8000
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - uses: ruby/setup-ruby@v1
+
+      - name: Install dependent libraries
+        run: sudo apt-get install libpq-dev
+
+      - name: Bundle install
+        run: |
+          gem install bundler --no-document
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+
+      - name: Create Database
+        run: ruby dbcreate.rb
+
+      - name: Run RSpec
+        run: COVERAGE=true bundle exec rspec  --require rails_helper
+        env:
+          LAMBDA_ENV: test
+          SEC_ON_JETS_URL: ${{ secrets.SEC_ON_JETS_URL }}
+          SEC_ON_JETS_API_KEY: ${{ secrets.SEC_ON_JETS_API_KEY }}
