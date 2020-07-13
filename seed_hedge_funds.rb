@@ -2,7 +2,7 @@ require 'json'
 require 'dotenv/load'
 require 'pry'
 
-require_relative 'lambda_source/models'
+require_relative 'lib/models'
 
 hedge_funds = JSON.parse(File.read('13F-HR_funds.json'))
 

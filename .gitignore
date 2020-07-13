@@ -245,3 +245,5 @@ $RECYCLE.BIN/
 layer/*
 !layer/.keep
 vendor/*
+
+.bundle/config
