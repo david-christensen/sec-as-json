@@ -37,7 +37,7 @@ jobs:
         run: ruby dbcreate.rb
 
       - name: Run RSpec
-        run: rspec
+        run: bundle exec rspec
         env:
           LAMBDA_ENV: test
           SEC_ON_JETS_URL: ${{ secrets.SEC_ON_JETS_URL }}
