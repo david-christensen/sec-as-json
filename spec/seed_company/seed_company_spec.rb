@@ -198,7 +198,7 @@ RSpec.describe SeedCompany do
 
       expect { Company.find('0001669779') }.to raise_error do |error|
         expect(error).to be_a Dynamoid::Errors::RecordNotFound
-        expect(error.to_s).to eq "Couldn't find Company with primary key (0001669779,company)"
+        expect(error.to_s).to eq "Couldn't find company with primary key (0001669779,company)"
       end
     end
   end
