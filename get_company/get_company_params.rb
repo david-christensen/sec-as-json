@@ -1,7 +1,7 @@
 require 'json'
 require 'response'
 
-class SeedCompanyParams
+class GetCompanyParams
   def initialize(event:, context:)
     @event = event
     @context = context
@@ -18,13 +18,13 @@ class SeedCompanyParams
 
   def ticker
     return @ticker if @ticker
-    value = (@event.dig(:queryStringParameters, :ticker) || json_body['ticker'])&.upcase
+    value = (@event.dig('pathParameters', 'ticker') || json_body['ticker'])&.upcase
     @ticker = value.is_a?(String) && value.presence || nil
   end
 
   def cik
     return @cik if @cik
-    value = (@event.dig(:queryStringParameters, :cik) || json_body['cik'])
+    value = (@event.dig('pathParameters', 'cik') || json_body['cik'])
     @cik = value.is_a?(String) && value.presence || nil
   end
 

@@ -24,7 +24,7 @@ module SecOnJetsAPI
                 name,
                 cusip,
                 formerNames{date, name},
-                assitantDirector,
+                assistantDirector,
                 sicCode,
                 sicIndustryTitle,
                 sicListHref,

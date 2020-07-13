@@ -1,0 +1,628 @@
+[
+  {
+    "cik": "0000809586",
+    "name": "HEARTLAND GROUP INC",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "MILWAUKEE",
+      "state": "WI",
+      "street1": "789 N. WATER ST.",
+      "zip": "53202"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "MILWAUKEE",
+      "phone": "4149778748",
+      "state": "WI",
+      "street1": "789 N. WATER ST.",
+      "zip": "53202"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000809586&owner=include&count=40",
+    "formerly_names": null,
+    "state_location": "WI",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=WI&owner=include&count=40",
+    "state_of_incorporation": "MD"
+  },
+  {
+    "cik": "0000872323",
+    "name": "HARRIS ASSOCIATES INVESTMENT TRUST",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "CHICAGO",
+      "state": "IL",
+      "street1": "HARRIS ASSOCIATES LP",
+      "street2": "111 S. WACKER DRIVE, SUITE 4600",
+      "zip": "60606"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "CHICAGO",
+      "phone": "8004769625",
+      "state": "IL",
+      "street1": "HARRIS ASSOCIATES LP",
+      "street2": "111 S. WACKER DRIVE, SUITE 4600",
+      "zip": "60606"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000872323&owner=include&count=40",
+    "formerly_names": null,
+    "state_location": "IL",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=IL&owner=include&count=40",
+    "state_of_incorporation": "MA"
+  },
+  {
+    "cik": "0000798365",
+    "name": "ARIEL INVESTMENT TRUST",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "CHICAGO",
+      "state": "IL",
+      "street1": "200 EAST RANDOLPH STREET",
+      "street2": "SUITE 2900",
+      "zip": "60601"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "CHICAGO",
+      "phone": "312-726-0140",
+      "state": "IL",
+      "street1": "200 EAST RANDOLPH STREET",
+      "street2": "SUITE 2900",
+      "zip": "60601"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000798365&owner=include&count=40",
+    "formerly_names": {
+      "date": "2001-10-24",
+      "name": "ARIEL GROWTH FUND"
+    },
+    "state_location": "IL",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=IL&owner=include&count=40",
+    "state_of_incorporation": null
+  },
+  {
+    "cik": "0001316506",
+    "name": "Clipper Funds Trust",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "TUCSON",
+      "state": "AZ",
+      "street1": "DAVIS SELECTED ADVISERS, L.P.",
+      "street2": "2949 E. ELVIRA ROAD, SUITE 101",
+      "zip": "85706"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "TUCSON",
+      "phone": "520-434-3778",
+      "state": "AZ",
+      "street1": "DAVIS SELECTED ADVISERS, L.P.",
+      "street2": "2949 E. ELVIRA ROAD, SUITE 101",
+      "zip": "85706"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001316506&owner=include&count=40",
+    "formerly_names": null,
+    "state_location": "AZ",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=AZ&owner=include&count=40",
+    "state_of_incorporation": "DE"
+  },
+  {
+    "cik": "0000720498",
+    "name": "MATRIX ADVISORS VALUE FUND INC",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "WHITE PLAINS",
+      "state": "NY",
+      "street1": "10 BANK STREET, SUITE 590",
+      "zip": "10606"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "GLENDORA",
+      "phone": "800-366-6223",
+      "state": "CA",
+      "street1": "2020 EAST FINANCIAL WAY, SUITE 100",
+      "zip": "91741"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000720498&owner=include&count=40",
+    "formerly_names": [
+      {
+        "date": "1998-09-01",
+        "name": "LMH FUND LTD"
+      },
+      {
+        "date": "2000-04-06",
+        "name": "MATRIX/LMH VALUE FUND"
+      }
+    ],
+    "state_location": "CA",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CA&owner=include&count=40",
+    "state_of_incorporation": "MD"
+  },
+  {
+    "cik": "0000029440",
+    "name": "DODGE & COX FUNDS",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "SAN FRANCISCO",
+      "state": "CA",
+      "street1": "555 CALIFORNIA ST",
+      "street2": "40 TH FLOOR",
+      "zip": "94104"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "SAN FRANCISCO",
+      "phone": "4159811710",
+      "state": "CA",
+      "street1": "555 CALIFORNIA ST",
+      "street2": "40 TH FLOOR",
+      "zip": "94104"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000029440&owner=include&count=40",
+    "formerly_names": {
+      "date": "1998-05-13",
+      "name": "DODGE &amp;amp; COX BALANCED FUND/CA"
+    },
+    "state_location": "CA",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CA&owner=include&count=40",
+    "state_of_incorporation": "DE"
+  },
+  {
+    "cik": "0000885980",
+    "name": "YACKTMAN FUND INC",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "MILWAUKEE",
+      "state": "WI",
+      "street1": "615 EAST MICHIGAN",
+      "street2": "MK-WI-LC2",
+      "zip": "53202"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "AUSTIN",
+      "phone": "512-767-6700",
+      "state": "TX",
+      "street1": "6300 BRIDGEPOINT PARKWAY",
+      "street2": "BUILDING ONE, SUITE 500",
+      "zip": "78732"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000885980&owner=include&count=40",
+    "formerly_names": null,
+    "state_location": "TX",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=TX&owner=include&count=40",
+    "state_of_incorporation": "MD"
+  },
+  {
+    "cik": "0000099188",
+    "name": "FPA CAPITAL FUND INC",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "LOS ANGELES",
+      "state": "CA",
+      "street1": "11601 WILSHIRE BOULEVARD",
+      "street2": "SUITE 1200",
+      "zip": "90025"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "LOS ANGELES",
+      "phone": "310-473-0225",
+      "state": "CA",
+      "street1": "11601 WILSHIRE BOULEVARD",
+      "street2": "SUITE 1200",
+      "zip": "90025"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000099188&owner=include&count=40",
+    "formerly_names": null,
+    "state_location": "CA",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CA&owner=include&count=40",
+    "state_of_incorporation": "MD"
+  },
+  {
+    "cik": "0000906352",
+    "name": "FIRST EAGLE FUNDS",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "NEW YORK",
+      "state": "NY",
+      "street1": "1345 AVENUE OF THE AMERICAS",
+      "zip": "10105"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "NEW YORK",
+      "phone": "212-698-3393",
+      "state": "NY",
+      "street1": "1345 AVENUE OF THE AMERICAS",
+      "zip": "10105"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000906352&owner=include&count=40",
+    "formerly_names": [
+      {
+        "date": "2005-03-31",
+        "name": "FIRST EAGLE  FUNDS INC"
+      },
+      {
+        "date": "2002-12-30",
+        "name": "FIRST EAGLE SOGEN FUNDS INC"
+      },
+      {
+        "date": "2000-01-13",
+        "name": "SOGEN FUNDS INC"
+      }
+    ],
+    "state_location": "NY",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "state_of_incorporation": "DE"
+  },
+  {
+    "cik": "0000798365",
+    "name": "ARIEL INVESTMENT TRUST",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "CHICAGO",
+      "state": "IL",
+      "street1": "200 EAST RANDOLPH STREET",
+      "street2": "SUITE 2900",
+      "zip": "60601"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "CHICAGO",
+      "phone": "312-726-0140",
+      "state": "IL",
+      "street1": "200 EAST RANDOLPH STREET",
+      "street2": "SUITE 2900",
+      "zip": "60601"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000798365&owner=include&count=40",
+    "formerly_names": {
+      "date": "2001-10-24",
+      "name": "ARIEL GROWTH FUND"
+    },
+    "state_location": "IL",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=IL&owner=include&count=40",
+    "state_of_incorporation": null
+  },
+  {
+    "cik": "0001122649",
+    "name": "HILLMAN CAPITAL MANAGEMENT INVESTMENT TRUST",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "ROCKY MOUNT",
+      "state": "NC",
+      "street1": "116 SOUTH FRANKLIN STREET",
+      "street2": "PO BOX 69",
+      "zip": "27802-0069"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "ROCKY MOUNT",
+      "phone": "2529729922",
+      "state": "NC",
+      "street1": "116 SOUTH FRANKLIN STREET",
+      "street2": "PO BOX 69",
+      "zip": "27802-0069"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001122649&owner=include&count=40",
+    "formerly_names": null,
+    "state_location": "NC",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NC&owner=include&count=40",
+    "state_of_incorporation": "DE"
+  },
+  {
+    "cik": "0000806636",
+    "name": "LONGLEAF PARTNERS FUNDS TRUST",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "MEMPHIS",
+      "state": "TN",
+      "street1": "C/O SOUTHEASTERN ASSET MANAGEMENT",
+      "street2": "6410 POPLAR AVE, SUITE 900",
+      "zip": "38119"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "MEMPHIS",
+      "phone": "9017612474",
+      "state": "TN",
+      "street1": "C/O SOUTHEASTERN ASSET MANAGEMENT",
+      "street2": "6410 POPLAR AVE, SUITE 900",
+      "zip": "38119"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000806636&owner=include&count=40",
+    "formerly_names": null,
+    "state_location": "TN",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=TN&owner=include&count=40",
+    "state_of_incorporation": "TN"
+  },
+  {
+    "cik": "0000745467",
+    "name": "MERIDIAN FUND INC",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "DENVER",
+      "state": "CO",
+      "street1": "100 FILLMORE STREET",
+      "street2": "SUITE 325",
+      "zip": "80206"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "DENVER",
+      "phone": "303-398-2929",
+      "state": "CO",
+      "street1": "100 FILLMORE STREET",
+      "street2": "SUITE 325",
+      "zip": "80206"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000745467&owner=include&count=40",
+    "formerly_names": {
+      "date": "2004-03-03",
+      "name": "MERIDIAN FUND INC/NEW"
+    },
+    "state_location": "CO",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CO&owner=include&count=40",
+    "state_of_incorporation": "MD"
+  },
+  {
+    "cik": "0000045291",
+    "name": "JOHN HANCOCK CAPITAL SERIES",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "BOSTON",
+      "state": "MA",
+      "street1": "C/O JOHN HANCOCK FUNDS",
+      "street2": "200 BERKELEY STREET",
+      "zip": "02116"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "BOSTON",
+      "phone": "617-663-3000",
+      "state": "MA",
+      "street1": "C/O JOHN HANCOCK FUNDS",
+      "street2": "200 BERKELEY STREET",
+      "zip": "02116"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000045291&owner=include&count=40",
+    "formerly_names": [
+      {
+        "date": "2011-01-28",
+        "name": "HANCOCK JOHN CAPITAL SERIES"
+      },
+      {
+        "date": "1994-02-24",
+        "name": "HANCOCK JOHN CAPITAL SERIES FUND"
+      }
+    ],
+    "state_location": "MA",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=MA&owner=include&count=40",
+    "state_of_incorporation": "DE"
+  },
+  {
+    "cik": "0000862696",
+    "name": "TORRAY FUND",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "BETHESDA",
+      "state": "MD",
+      "street1": "7501 WISCONSIN AVENUE",
+      "street2": "SUITE 750W",
+      "zip": "20814-6523"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "BETHESDA",
+      "phone": "3014934600",
+      "state": "MD",
+      "street1": "7501 WISCONSIN AVENUE",
+      "street2": "SUITE 750W",
+      "zip": "20814-6523"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000862696&owner=include&count=40",
+    "formerly_names": null,
+    "state_location": "MD",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=MD&owner=include&count=40",
+    "state_of_incorporation": null
+  },
+  {
+    "cik": "0000045291",
+    "name": "JOHN HANCOCK CAPITAL SERIES",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "BOSTON",
+      "state": "MA",
+      "street1": "C/O JOHN HANCOCK FUNDS",
+      "street2": "200 BERKELEY STREET",
+      "zip": "02116"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "BOSTON",
+      "phone": "617-663-3000",
+      "state": "MA",
+      "street1": "C/O JOHN HANCOCK FUNDS",
+      "street2": "200 BERKELEY STREET",
+      "zip": "02116"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000045291&owner=include&count=40",
+    "formerly_names": [
+      {
+        "date": "2011-01-28",
+        "name": "HANCOCK JOHN CAPITAL SERIES"
+      },
+      {
+        "date": "1994-02-24",
+        "name": "HANCOCK JOHN CAPITAL SERIES FUND"
+      }
+    ],
+    "state_location": "MA",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=MA&owner=include&count=40",
+    "state_of_incorporation": "DE"
+  },
+  {
+    "cik": "0000924727",
+    "name": "FPA FUNDS TRUST",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "LOS ANGELES",
+      "state": "CA",
+      "street1": "11601 WILSHIRE BOULEVARD",
+      "street2": "SUITE 1200",
+      "zip": "90025"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "LOS ANGELES",
+      "phone": "310-473-0225",
+      "state": "CA",
+      "street1": "11601 WILSHIRE BOULEVARD",
+      "street2": "SUITE 1200",
+      "zip": "90025"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000924727&owner=include&count=40",
+    "formerly_names": [
+      {
+        "date": "1995-01-13",
+        "name": "REGIS FUND II"
+      },
+      {
+        "date": "2002-10-22",
+        "name": "UAM FUNDS TRUST"
+      }
+    ],
+    "state_location": "CA",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CA&owner=include&count=40",
+    "state_of_incorporation": "MA"
+  },
+  {
+    "cik": "0000896975",
+    "name": "TWEEDY, BROWNE FUND INC.",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "STAMFORD",
+      "state": "CT",
+      "street1": "ONE STATION PLACE",
+      "zip": "06902"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "STAMFORD",
+      "phone": "203-703-0600",
+      "state": "CT",
+      "street1": "ONE STATION PLACE",
+      "zip": "06902"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000896975&owner=include&count=40",
+    "formerly_names": {
+      "date": "2013-02-28",
+      "name": "TWEEDY BROWNE FUND INC"
+    },
+    "state_location": "CT",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CT&owner=include&count=40",
+    "state_of_incorporation": "MD"
+  },
+  {
+    "cik": "0001257927",
+    "name": "WEITZ FUNDS",
+    "mailing_address": {
+      "type": "mailing",
+      "city": "OMAHA",
+      "state": "NE",
+      "street1": "1125 SOUTH 103 ST",
+      "street2": "SUITE 200",
+      "zip": "68124"
+    },
+    "business_address": {
+      "type": "business",
+      "city": "OMAHA",
+      "phone": "4023911980",
+      "state": "NE",
+      "street1": "1125 SOUTH 103 ST",
+      "street2": "SUITE 200",
+      "zip": "68124"
+    },
+    "assigned_sic": null,
+    "assigned_sic_desc": null,
+    "assigned_sic_href": null,
+    "assitant_director": null,
+    "cik_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001257927&owner=include&count=40",
+    "formerly_names": null,
+    "state_location": "NE",
+    "state_location_href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NE&owner=include&count=40",
+    "state_of_incorporation": "DE"
+  }
+]

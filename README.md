@@ -67,6 +67,11 @@ The SAM CLI can also emulate your application's API. Use the `sam local start-ap
 ```bash
 sec-as-json$ sam local start-api
 sec-as-json$ curl http://localhost:3000/
+
+or 
+
+sam local start-api --env-vars=.env.json --skip-pull-image
+
 ```
 
 The SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
@@ -95,12 +100,19 @@ sec-as-json$ sam logs -n HelloWorldFunction --stack-name sec-as-json --tail
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
 
-## Unit tests
+## Environment Variables
+- Environment variables are specified for rspec in the `.env.rspec` file.
 
-Tests are defined in the `tests` folder in this project.
+- Environment variables are specified for local sam-api in the `.env.json` file.
+
+  -- NOTE: An environment variable in the `.env.json` must also exist in the function definition (of the `template.yml`) in order for local sam-api to use it.
+
+## Tests
+
+Tests are defined in the `specs` folder in this project.
 
 ```bash
-sec-as-json$ ruby tests/unit/test_handler.rb
+sec-as-json$ rspec
 ```
 
 ## Cleanup
@@ -116,3 +128,23 @@ aws cloudformation delete-stack --stack-name sec-as-json
 See the [AWS SAM developer guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) for an introduction to SAM specification, the SAM CLI, and serverless application concepts.
 
 Next, you can use AWS Serverless Application Repository to deploy ready to use Apps that go beyond hello world samples and learn how authors developed their applications: [AWS Serverless Application Repository main page](https://aws.amazon.com/serverless/serverlessrepo/)
+
+
+## Dynamodb Local
+`docker run -p 8000:8000 amazon/dynamodb-local`
+
+`aws dynamodb list-tables --endpoint-url http://localhost:8000`
+
+`aws dynamodb create-table --cli-input-json file://json/create-person-table.json --endpoint-url http://localhost:8000`
+
+`aws dynamodb delete-table --table-name PersonTable --endpoint-url http://localhost:8000`
+
+## Authorizer Cache
+
+ To flush the authorizers cache of the `Prod` stage of the RestAPI with an id `rebhl60dng`:
+ ```
+ aws apigateway flush-stage-authorizers-cache --rest-api-id rebhl60dng --stage-name Prod
+ ```
+ I've noticed that it can take about a minute to clear the cache for all lambdas. For a while you get a mix of 401s and 200s.
+ 
+ 

@@ -1,0 +1,1402 @@
+[
+  {
+    "cik": "0001063296",
+    "name": "ATLANTIC INVESTMENT MANAGEMENT, INC.",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "NEW YORK",
+      "state": "NY",
+      "street1": "666 FIFTH AVENUE",
+      "street2": "34TH FLOOR",
+      "zip": "10103"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "NEW YORK",
+      "phone": "2126886644",
+      "state": "NY",
+      "street1": "666 FIFTH AVENUE",
+      "street2": "34TH FLOOR",
+      "zip": "10103"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001063296&owner=include&count=40",
+    "formerlyNames": {
+      "date": "2015-11-06",
+      "name": "ATLANTIC INVESTMENT MANAGEMENT INC"
+    },
+    "stateLocation": "NY",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001568820",
+    "name": "Arlington Value Capital, LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "SALT LAKE CITY",
+      "state": "UT",
+      "street1": "222 S. MAIN STREET, SUITE 1750",
+      "zip": "84101"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "SALT LAKE CITY",
+      "phone": "801-505-6275",
+      "state": "UT",
+      "street1": "222 S. MAIN STREET, SUITE 1750",
+      "zip": "84101"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001568820&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "UT",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=UT&owner=include&count=40",
+    "stateOfIncorporation": "UT"
+  },
+  {
+    "cik": "0001166559",
+    "name": "BILL & MELINDA GATES FOUNDATION TRUST",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "KIRKLAND",
+      "state": "WA",
+      "street1": "2365 CARILLON POINT",
+      "zip": "98033"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "KIRKLAND",
+      "phone": "4258897900",
+      "state": "WA",
+      "street1": "2365 CARILLON POINT",
+      "zip": "98033"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001166559&owner=include&count=40",
+    "formerlyNames": {
+      "date": "2006-08-14",
+      "name": "GATES BILL &amp;amp; MELINDA FOUNDATION"
+    },
+    "stateLocation": "WA",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=WA&owner=include&count=40",
+    "stateOfIncorporation": "WA"
+  },
+  {
+    "cik": "0001336528",
+    "name": "Pershing Square Capital Management, L.P.",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "NEW YORK",
+      "state": "NY",
+      "street1": "787 11TH AVENUE",
+      "street2": "9TH FLOOR",
+      "zip": "10019"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "NEW YORK",
+      "phone": "212-813-3700",
+      "state": "NY",
+      "street1": "787 11TH AVENUE",
+      "street2": "9TH FLOOR",
+      "zip": "10019"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001336528&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "NY",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001135778",
+    "name": "MILLER VALUE PARTNERS, LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "BALTIMORE",
+      "state": "MD",
+      "street1": "ONE SOUTH STREET",
+      "street2": "SUITE 2550",
+      "zip": "21202"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "BALTIMORE",
+      "phone": "4104543130",
+      "state": "MD",
+      "street1": "ONE SOUTH STREET",
+      "street2": "SUITE 2550",
+      "zip": "21202"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001135778&owner=include&count=40",
+    "formerlyNames": [
+      {
+        "date": "2017-08-14",
+        "name": "LMM LLC"
+      },
+      {
+        "date": "2013-06-07",
+        "name": "LMM LLC /MD/"
+      }
+    ],
+    "stateLocation": "MD",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=MD&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001056831",
+    "name": "FAIRHOLME CAPITAL MANAGEMENT LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "MIAMI",
+      "state": "FL",
+      "street1": "2601 NE 2ND AVENUE",
+      "zip": "33137"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "MIAMI",
+      "phone": "305-358-3000",
+      "state": "FL",
+      "street1": "2601 NE 2ND AVENUE",
+      "zip": "33137"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001056831&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "FL",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=FL&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0000921669",
+    "name": "ICAHN CARL C",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "SUNNY ISLES",
+      "state": "FL",
+      "street1": "C/O ICAHN ENTERPRISES L.P.",
+      "street2": "16690 COLLINS AVE., PH",
+      "zip": "33160"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "SUNNY ISLES",
+      "phone": "305-422-4145",
+      "state": "FL",
+      "street1": "C/O ICAHN ENTERPRISES L.P.",
+      "street2": "16690 COLLINS AVE., PH",
+      "zip": "33160"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000921669&owner=include&count=40",
+    "formerlyNames": {
+      "date": "2007-10-26",
+      "name": "ICAHN CARL C ET AL"
+    },
+    "stateLocation": "FL",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=FL&owner=include&count=40",
+    "stateOfIncorporation": "NY"
+  },
+  {
+    "cik": "0000783412",
+    "name": "DAILY JOURNAL CORP",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "LOS ANGELES",
+      "state": "CA",
+      "street1": "915 EAST FIRST STREET",
+      "zip": "90012"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "LOS ANGELES",
+      "phone": "2132295300",
+      "state": "CA",
+      "street1": "915 EAST FIRST STREET",
+      "zip": "90012"
+    },
+    "assignedSic": "2711",
+    "assignedSicDesc": "NEWSPAPERS:  PUBLISHING OR PUBLISHING &amp; PRINTING",
+    "assignedSicHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=2711&owner=include&count=40",
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000783412&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "CA",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CA&owner=include&count=40",
+    "stateOfIncorporation": "SC"
+  },
+  {
+    "cik": "0001647251",
+    "name": "TCI Fund Management Ltd",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "LONDON",
+      "state": "X0",
+      "street1": "7 CLIFFORD STREET",
+      "zip": "W1S2FT"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "LONDON",
+      "phone": "02074402330",
+      "state": "X0",
+      "street1": "7 CLIFFORD STREET",
+      "zip": "W1S2FT"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001647251&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "X0",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=X0&owner=include&count=40",
+    "stateOfIncorporation": "X0"
+  },
+  {
+    "cik": "0001115373",
+    "name": "SEMPER AUGUSTUS INVESTMENTS GROUP LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "HIGHLANDS RANCH",
+      "state": "CO",
+      "street1": "640 PLAZA DRIVE",
+      "street2": "SUITE 160",
+      "zip": "80129"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "HIGHLANDS RANCH",
+      "phone": "3038931214",
+      "state": "CO",
+      "street1": "640 PLAZA DRIVE",
+      "street2": "SUITE 160",
+      "zip": "80129"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001115373&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "CO",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CO&owner=include&count=40",
+    "stateOfIncorporation": "CO"
+  },
+  {
+    "cik": "0001112520",
+    "name": "AKRE CAPITAL MANAGEMENT LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "MIDDLEBURG",
+      "state": "VA",
+      "street1": "2 WEST MARSHALL STREET",
+      "street2": "P.O. BOX 998",
+      "zip": "20118-0998"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "MIDDLEBURG",
+      "phone": "540-687-3880",
+      "state": "VA",
+      "street1": "2 WEST MARSHALL STREET",
+      "zip": "20117"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001112520&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "VA",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=VA&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001040273",
+    "name": "Third Point LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "NEW YORK",
+      "state": "NY",
+      "street1": "390 PARK AVENUE",
+      "street2": "19TH FLOOR",
+      "zip": "10022"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "NEW YORK",
+      "phone": "2122247400",
+      "state": "NY",
+      "street1": "390 PARK AVENUE",
+      "street2": "19TH FLOOR",
+      "zip": "10022"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001040273&owner=include&count=40",
+    "formerlyNames": {
+      "date": "2005-02-07",
+      "name": "THIRD POINT MANAGEMENT CO LLC"
+    },
+    "stateLocation": "NY",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001358706",
+    "name": "ABRAMS CAPITAL MANAGEMENT, L.P.",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "BOSTON",
+      "state": "MA",
+      "street1": "222 BERKELEY STREET, 21ST FLOOR",
+      "zip": "02116"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "BOSTON",
+      "phone": "617-646-6100",
+      "state": "MA",
+      "street1": "222 BERKELEY STREET, 21ST FLOOR",
+      "zip": "02116"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001358706&owner=include&count=40",
+    "formerlyNames": {
+      "date": "2010-11-12",
+      "name": "PAMET CAPITAL MANAGEMENT, LP"
+    },
+    "stateLocation": "MA",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=MA&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001079114",
+    "name": "GREENLIGHT CAPITAL INC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "NEW YORK",
+      "state": "NY",
+      "street1": "140 EAST 45TH STREET",
+      "street2": "24TH FLOOR",
+      "zip": "10017"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "NEW YORK",
+      "phone": "2129731900",
+      "state": "NY",
+      "street1": "140 EAST 45TH STREET",
+      "street2": "24TH FLOOR",
+      "zip": "10017"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001079114&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "NY",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0000859804",
+    "name": "WEDGEWOOD PARTNERS INC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "ST LOUIS",
+      "state": "MO",
+      "street1": "9909 CLAYTON RD",
+      "street2": "STE 103",
+      "zip": "63124"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "ST LOUIS",
+      "phone": "3145676407",
+      "state": "MO",
+      "street1": "9909 CLAYTON ROAD",
+      "street2": "STE 103",
+      "zip": "63124"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000859804&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "MO",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=MO&owner=include&count=40",
+    "stateOfIncorporation": "MO"
+  },
+  {
+    "cik": "0001006438",
+    "name": "APPALOOSA MANAGEMENT LP",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "MIAMI BEACH",
+      "state": "FL",
+      "street1": "404 WASHINGTON AVENUE",
+      "zip": "33139"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "MIAMI BEACH",
+      "phone": "9737017000",
+      "state": "FL",
+      "street1": "404 WASHINGTON AVENUE",
+      "zip": "33139"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001006438&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "FL",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=FL&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0000860585",
+    "name": "RBS PARTNERS, L.P.",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "BAY HARBOR ISLANDS",
+      "state": "FL",
+      "street1": "1170 KANE CONCOURSE",
+      "street2": "SUITE 200",
+      "zip": "33154"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "BAY HARBOR ISLANDS",
+      "phone": "305-702-2100",
+      "state": "FL",
+      "street1": "1170 KANE CONCOURSE",
+      "street2": "SUITE 200",
+      "zip": "33154"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000860585&owner=include&count=40",
+    "formerlyNames": {
+      "date": "2013-11-04",
+      "name": "RBS PARTNERS L P /CT"
+    },
+    "stateLocation": "FL",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=FL&owner=include&count=40",
+    "stateOfIncorporation": null
+  },
+  {
+    "cik": "0001389403",
+    "name": "Chou Associates Management Inc.",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "TORONTO",
+      "state": "A6",
+      "street1": "110 SHEPPARD AVENUE EAST",
+      "street2": "SUITE 301, BOX 18",
+      "zip": "M2N 6Y8"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "TORONTO",
+      "phone": "416.214.0675",
+      "state": "A6",
+      "street1": "110 SHEPPARD AVENUE EAST",
+      "street2": "SUITE 301, BOX 18",
+      "zip": "M2N 6Y8"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001389403&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "A6",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=A6&owner=include&count=40",
+    "stateOfIncorporation": "A6"
+  },
+  {
+    "cik": "0001553733",
+    "name": "Brave Warrior Advisors, LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "NEW YORK",
+      "state": "NY",
+      "street1": "12 EAST 49 STREET, 24TH FLOOR",
+      "zip": "10017"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "NEW YORK",
+      "phone": "212-421-9760",
+      "state": "NY",
+      "street1": "12 EAST 49 STREET, 24TH FLOOR",
+      "zip": "10017"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001553733&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "NY",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001404599",
+    "name": "Aquamarine Capital Management, LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "BOSTON",
+      "state": "MA",
+      "street1": "100 CAMBRIDGE STREET",
+      "street2": "FLOOR 14",
+      "zip": "02114"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "BOSTON",
+      "phone": "212-716-1350",
+      "state": "MA",
+      "street1": "100 CAMBRIDGE STREET",
+      "street2": "FLOOR 14",
+      "zip": "02114"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001404599&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "MA",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=MA&owner=include&count=40",
+    "stateOfIncorporation": "NY"
+  },
+  {
+    "cik": "0000820124",
+    "name": "SOUND SHORE MANAGEMENT INC /CT/",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "GREENWICH",
+      "state": "CT",
+      "street1": "8 SOUND SHORE DRIVE",
+      "street2": "SUITE 180",
+      "zip": "06830"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "GREENWICH",
+      "phone": "(203) 629-1980",
+      "state": "CT",
+      "street1": "8 SOUND SHORE DRIVE",
+      "street2": "SUITE 180",
+      "zip": "06830"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000820124&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "CT",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CT&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0000949509",
+    "name": "OAKTREE CAPITAL MANAGEMENT LP",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "LOS ANGELES",
+      "state": "CA",
+      "street1": "333 S GRAND AVE 28TH FL",
+      "zip": "90071"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "LOS ANGELES",
+      "phone": "2138306300",
+      "state": "CA",
+      "street1": "333 S GRAND AVENUE 28TH FL",
+      "zip": "90071"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000949509&owner=include&count=40",
+    "formerlyNames": [
+      {
+        "date": "2001-05-15",
+        "name": "OAKTREE CAPITAL MANAGEMENT L L C"
+      },
+      {
+        "date": "2007-05-11",
+        "name": "OAKTREE CAPITAL MANAGEMENT LLC"
+      }
+    ],
+    "stateLocation": "CA",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CA&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0000096223",
+    "name": "Jefferies Financial Group Inc.",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "NEW YORK",
+      "state": "NY",
+      "street1": "520 MADISON AVENUE",
+      "zip": "10022"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "NEW YORK",
+      "phone": "2124601900",
+      "state": "NY",
+      "street1": "520 MADISON AVENUE",
+      "zip": "10022"
+    },
+    "assignedSic": "6211",
+    "assignedSicDesc": "SECURITY BROKERS, DEALERS &amp; FLOTATION COMPANIES",
+    "assignedSicHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=6211&owner=include&count=40",
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000096223&owner=include&count=40",
+    "formerlyNames": {
+      "date": "2018-05-15",
+      "name": "LEUCADIA NATIONAL CORP"
+    },
+    "stateLocation": "NY",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "stateOfIncorporation": "NY"
+  },
+  {
+    "cik": "0001418814",
+    "name": "ValueAct Holdings, L.P.",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "SAN FRANCISCO",
+      "state": "CA",
+      "street1": "ONE LETTERMAN DRIVE",
+      "street2": "BUILDING D, 4TH FLOOR",
+      "zip": "94129"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "SAN FRANCISCO",
+      "phone": "415-362-3700",
+      "state": "CA",
+      "street1": "ONE LETTERMAN DRIVE",
+      "street2": "BUILDING D, 4TH FLOOR",
+      "zip": "94129"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001418814&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "CA",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CA&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001039565",
+    "name": "KAHN BROTHERS GROUP INC /DE/",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "NEW YORK",
+      "state": "NY",
+      "street1": "KAHN BROTHERS GROUP INC",
+      "street2": "555 MADISON AVENUE 22ND FLOOR",
+      "zip": "10022"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "NEW YORK",
+      "phone": "2129805050",
+      "state": "NY",
+      "street1": "KAHN BROTHERS & CO INC",
+      "street2": "555 MADISON AVENUE 22ND FLOOR",
+      "zip": "10022"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001039565&owner=include&count=40",
+    "formerlyNames": [
+      {
+        "date": "2014-02-04",
+        "name": "KAHN BROTHERS &amp;amp; CO INC /DE/"
+      },
+      {
+        "date": "2001-08-03",
+        "name": "KAHN THOMAS GRAHAM"
+      }
+    ],
+    "stateLocation": "NY",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0000934639",
+    "name": "MAVERICK CAPITAL LTD",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "DALLAS",
+      "state": "TX",
+      "street1": "1900 N. PEARL STREET, 20TH FLOOR",
+      "zip": "75201"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "DALLAS",
+      "phone": "214.880.4050",
+      "state": "TX",
+      "street1": "1900 N. PEARL STREET, 20TH FLOOR",
+      "zip": "75201"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000934639&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "TX",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=TX&owner=include&count=40",
+    "stateOfIncorporation": "TX"
+  },
+  {
+    "cik": "0000898382",
+    "name": "COOPERMAN LEON G",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "BOCA RATON",
+      "state": "FL",
+      "street1": "7118 MELROSE CASTLE LANE",
+      "zip": "33496"
+    },
+    "businessAddress": null,
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000898382&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": null,
+    "stateLocationHref": null,
+    "stateOfIncorporation": "NY"
+  },
+  {
+    "cik": "0001070134",
+    "name": "MAIRS & POWER INC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "ST PAUL",
+      "state": "MN",
+      "street1": "W-1520 FIRST NATIONAL BANK BLDG",
+      "street2": "332 MINNESOTA STREET",
+      "zip": "55101"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "ST PAUL",
+      "phone": "6512228478",
+      "state": "MN",
+      "street1": "332 MINNESOTA ST #W-1520",
+      "zip": "55101"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001070134&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "MN",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=MN&owner=include&count=40",
+    "stateOfIncorporation": "MN"
+  },
+  {
+    "cik": "0001105685",
+    "name": "MFP INVESTORS LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "NEW YORK",
+      "state": "NY",
+      "street1": "909 THIRD AVE, 33RD FLOOR",
+      "zip": "10022"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "NEW YORK",
+      "phone": "212 752-7280",
+      "state": "NY",
+      "street1": "909 THIRD AVE, 33RD FLOOR",
+      "zip": "10022"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001105685&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "NY",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001549575",
+    "name": "Dalal Street, LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "IRVINE",
+      "state": "CA",
+      "street1": "1220 ROOSEVELT",
+      "street2": "SUITE 200",
+      "zip": "92620-3675"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "IRVINE",
+      "phone": "949-453-0609",
+      "state": "CA",
+      "street1": "1220 ROOSEVELT",
+      "street2": "SUITE 200",
+      "zip": "92620-3675"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001549575&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "CA",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CA&owner=include&count=40",
+    "stateOfIncorporation": "CA"
+  },
+  {
+    "cik": "0001345471",
+    "name": "TRIAN FUND MANAGEMENT, L.P.",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "NEW YORK",
+      "state": "NY",
+      "street1": "280 PARK AVENUE",
+      "street2": "41ST FLOOR",
+      "zip": "10017"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "NEW YORK",
+      "phone": "212-451-3000",
+      "state": "NY",
+      "street1": "280 PARK AVENUE",
+      "street2": "41ST FLOOR",
+      "zip": "10017"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001345471&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "NY",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001671657",
+    "name": "Dorsey Asset Management, LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "CHICAGO",
+      "state": "IL",
+      "street1": "150 NORTH WACKER DR. SUITE 960",
+      "zip": "60606"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "CHICAGO",
+      "phone": "312-982-2543",
+      "state": "IL",
+      "street1": "150 NORTH WACKER DR. SUITE 960",
+      "zip": "60606"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001671657&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "IL",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=IL&owner=include&count=40",
+    "stateOfIncorporation": "IL"
+  },
+  {
+    "cik": "0000915191",
+    "name": "FAIRFAX FINANCIAL HOLDINGS LTD/ CAN",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "TORONTO",
+      "state": "A6",
+      "street1": "FAIRFAX FINANCIAL HOLDINGS LTD",
+      "street2": "95 WELLINGTON ST WEST STE 800",
+      "zip": "M5J 2N7"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "TORONTO",
+      "phone": "4163674941",
+      "state": "A6",
+      "street1": "FAIRFAX FINANCIAL HOLDINGS LTD",
+      "street2": "95 WELLINGTON ST WEST STE 800",
+      "zip": "M5J 2N7"
+    },
+    "assignedSic": "6331",
+    "assignedSicDesc": "FIRE, MARINE &amp; CASUALTY INSURANCE",
+    "assignedSicHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=6331&owner=include&count=40",
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000915191&owner=include&count=40",
+    "formerlyNames": [
+      {
+        "date": "1997-05-23",
+        "name": "FAIRFAX FINANCIAL HOLDINGS INC"
+      },
+      {
+        "date": "1995-02-13",
+        "name": "FAIRFAX FINANCIAL HOLDINGS LTD"
+      }
+    ],
+    "stateLocation": "A6",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=A6&owner=include&count=40",
+    "stateOfIncorporation": "Z4"
+  },
+  {
+    "cik": "0000947996",
+    "name": "Olstein Capital Management, L.P.",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "PURCHASE",
+      "state": "NY",
+      "street1": "4 MANAHATTANVILLE ROAD",
+      "zip": "10577"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "PURCHASE",
+      "phone": "9142696100",
+      "state": "NY",
+      "street1": "4 MANAHATTANVILLE ROAD",
+      "zip": "10577"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000947996&owner=include&count=40",
+    "formerlyNames": [
+      {
+        "date": "2006-11-14",
+        "name": "OLSTEIN &amp;amp; ASSOCIATES L P /NY"
+      },
+      {
+        "date": "2005-05-12",
+        "name": "OLSTEIN &amp;amp; ASSOICATES L P /NY"
+      }
+    ],
+    "stateLocation": "NY",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "stateOfIncorporation": "NY"
+  },
+  {
+    "cik": "0000887215",
+    "name": "Jensen Quality Growth Fund Inc",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "LAKE OSWEGO",
+      "state": "OR",
+      "street1": "5500 MEADOWS ROAD",
+      "street2": "SUITE 200",
+      "zip": "97035"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "LAKE OSWEGO",
+      "phone": "800-221-4384",
+      "state": "OR",
+      "street1": "5500 MEADOWS ROAD",
+      "street2": "SUITE 200",
+      "zip": "97035"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000887215&owner=include&count=40",
+    "formerlyNames": [
+      {
+        "date": "2018-02-28",
+        "name": "JENSEN PORTFOLIO INC"
+      },
+      {
+        "date": "2018-08-16",
+        "name": "JENSEN QUALITY GROWTH FUND, INC."
+      }
+    ],
+    "stateLocation": "OR",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=OR&owner=include&count=40",
+    "stateOfIncorporation": "OR"
+  },
+  {
+    "cik": "0000728014",
+    "name": "RUANE, CUNNIFF & GOLDFARB INC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "NEW YORK",
+      "state": "NY",
+      "street1": "9 WEST 57TH STREET",
+      "street2": "SUITE 5000",
+      "zip": "10019"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "NEW YORK",
+      "phone": "2128325280",
+      "state": "NY",
+      "street1": "9 WEST 57TH STREET",
+      "street2": "SUITE 5000",
+      "zip": "10019"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000728014&owner=include&count=40",
+    "formerlyNames": {
+      "date": "2004-11-10",
+      "name": "RUANE CUNNIFF &amp;amp; CO INC"
+    },
+    "stateLocation": "NY",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001061768",
+    "name": "BAUPOST GROUP LLC/MA",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "BOSTON",
+      "state": "MA",
+      "street1": "10 ST JAMES AVE",
+      "street2": "SUITE 1700",
+      "zip": "02116"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "BOSTON",
+      "phone": "617-210-8300",
+      "state": "MA",
+      "street1": "10 ST JAMES AVE",
+      "street2": "SUITE 1700",
+      "zip": "02116"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001061768&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "MA",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=MA&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001061165",
+    "name": "LONE PINE CAPITAL LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "GREENWICH",
+      "state": "CT",
+      "street1": "TWO GREENWICH PLZ",
+      "street2": "2ND FLOOR",
+      "zip": "06830"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "GREENWICH",
+      "phone": "2036181400",
+      "state": "CT",
+      "street1": "TWO GREENWICH PLZ",
+      "street2": "2ND FLOOR",
+      "zip": "06830"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001061165&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "CT",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CT&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001569205",
+    "name": "Fundsmith LLP",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "LONDON",
+      "state": "X0",
+      "street1": "33 CAVENDISH SQUARE",
+      "zip": "W1G 0PW"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "LONDON",
+      "phone": "44-020-3551-6339",
+      "state": "X0",
+      "street1": "33 CAVENDISH SQUARE",
+      "zip": "W1G 0PW"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001569205&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "X0",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=X0&owner=include&count=40",
+    "stateOfIncorporation": "X0"
+  },
+  {
+    "cik": "0001099281",
+    "name": "THIRD AVENUE MANAGEMENT LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "NEW YORK",
+      "state": "NY",
+      "street1": "622 THIRD AVENUE",
+      "street2": "32ND FLOOR",
+      "zip": "10017"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "NEW YORK",
+      "phone": "2128885222",
+      "state": "NY",
+      "street1": "622 THIRD AVENUE",
+      "street2": "32ND FLOOR",
+      "zip": "10017"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001099281&owner=include&count=40",
+    "formerlyNames": {
+      "date": "2002-09-10",
+      "name": "EQSF ADVISERS INC"
+    },
+    "stateLocation": "NY",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "stateOfIncorporation": null
+  },
+  {
+    "cik": "0001096343",
+    "name": "MARKEL CORP",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "GLEN ALLEN",
+      "state": "VA",
+      "street1": "4521 HIGHWOODS PKWY",
+      "zip": "23060"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "GLEN ALLEN",
+      "phone": "8047470136",
+      "state": "VA",
+      "street1": "4521 HIGHWOODS PARKWAY",
+      "zip": "23060-6148"
+    },
+    "assignedSic": "6331",
+    "assignedSicDesc": "FIRE, MARINE &amp; CASUALTY INSURANCE",
+    "assignedSicHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=6331&owner=include&count=40",
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001096343&owner=include&count=40",
+    "formerlyNames": {
+      "date": "2000-01-26",
+      "name": "MARKEL HOLDINGS INC"
+    },
+    "stateLocation": "VA",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=VA&owner=include&count=40",
+    "stateOfIncorporation": "VA"
+  },
+  {
+    "cik": "0000860643",
+    "name": "GARDNER RUSSO & GARDNER LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "LANCASTER",
+      "state": "PA",
+      "street1": "223 EAST CHESTNUT STREET",
+      "zip": "17602"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "LANCASTER",
+      "phone": "7172991385",
+      "state": "PA",
+      "street1": "223 EAST CHESTNUT STREET",
+      "zip": "17602"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000860643&owner=include&count=40",
+    "formerlyNames": [
+      {
+        "date": "2001-03-14",
+        "name": "GARDNER INVESTMENTS"
+      },
+      {
+        "date": "2014-05-13",
+        "name": "GARDNER RUSSO &amp;amp; GARDNER"
+      }
+    ],
+    "stateLocation": "PA",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=PA&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0000816153",
+    "name": "THORNBURG INVESTMENT TRUST",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "SANTA FE",
+      "state": "NM",
+      "street1": "2300 NORTH RIDGETOP ROAD",
+      "zip": "87506-8361"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "SANTA FE",
+      "phone": "5059840200",
+      "state": "NM",
+      "street1": "2300 NORTH RIDGETOP ROAD",
+      "zip": "87506-8361"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000816153&owner=include&count=40",
+    "formerlyNames": {
+      "date": "1995-05-31",
+      "name": "THORNBURG INCOME TRUST"
+    },
+    "stateLocation": "NM",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NM&owner=include&count=40",
+    "stateOfIncorporation": "MA"
+  },
+  {
+    "cik": "0001067983",
+    "name": "BERKSHIRE HATHAWAY INC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "OMAHA",
+      "state": "NE",
+      "street1": "3555 FARNAM STREET",
+      "zip": "68131"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "OMAHA",
+      "phone": "4023461400",
+      "state": "NE",
+      "street1": "3555 FARNAM STREET",
+      "zip": "68131"
+    },
+    "assignedSic": "6331",
+    "assignedSicDesc": "FIRE, MARINE &amp; CASUALTY INSURANCE",
+    "assignedSicHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=6331&owner=include&count=40",
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001067983&owner=include&count=40",
+    "formerlyNames": {
+      "date": "1999-01-05",
+      "name": "NBH INC"
+    },
+    "stateLocation": "NE",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NE&owner=include&count=40",
+    "stateOfIncorporation": "DE"
+  },
+  {
+    "cik": "0001279936",
+    "name": "CANTILLON CAPITAL MANAGEMENT LLC",
+    "mailingAddress": {
+      "type": "mailing",
+      "city": "NEW YORK",
+      "state": "NY",
+      "street1": "499 PARK AVENUE",
+      "street2": "9TH FLOOR",
+      "zip": "10022"
+    },
+    "businessAddress": {
+      "type": "business",
+      "city": "NEW YORK",
+      "phone": "2126033300",
+      "state": "NY",
+      "street1": "499 PARK AVENUE",
+      "street2": "9TH FLOOR",
+      "zip": "10022"
+    },
+    "assignedSic": null,
+    "assignedSicDesc": null,
+    "assignedSicHref": null,
+    "assistantDirector": null,
+    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001279936&owner=include&count=40",
+    "formerlyNames": null,
+    "stateLocation": "NY",
+    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
+    "stateOfIncorporation": null
+  }
+]
