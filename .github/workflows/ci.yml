@@ -35,6 +35,8 @@ jobs:
 
       - name: Create Database
         run: ruby dbcreate.rb
+        env:
+          AWS_REGION: us-east-2
 
       - name: Run RSpec
         run: bundle exec rspec
