@@ -33,15 +33,10 @@ jobs:
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3 --with test
 
-      - name: Create Database
-        run: ruby dbcreate.rb
-        env:
-          AWS_REGION: us-east-2
-          AWS_ACCESS_KEY_ID: X
-          AWS_SECRET_ACCESS_KEY: X
-
       - name: Run RSpec
-        run: bundle exec rspec
+        run: |
+          ruby dbcreate.rb
+          bundle exec rspec
         env:
           AWS_REGION: us-east-2
           AWS_ACCESS_KEY_ID: X
