@@ -15,7 +15,7 @@ class FormFeed
       puts "Fetching Page #{(start / 100) + 1 }"
       no_recent_filings = false
       until start == 3000 || no_recent_filings # There appears to be a hard limit at 2000 filings
-        url = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=#{type}&company=&dateb=&owner=only&start=#{start}&count=#{count}&output=atom"
+        url = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=#{type}&company=&dateb=&owner=include&start=#{start}&count=#{count}&output=atom"
         file = URI.open(url)
         no_recent_filings = file.is_a?(StringIO) && file&.string&.include?('No recent filings') || false
         next if no_recent_filings
@@ -73,52 +73,21 @@ class Form4Feed < FormFeed
   end
 end
 
-class FeedEntry
-  private
+class Form13FHRFeed < FormFeed
+  def self.from_sec_rss
+    super('13F-HR')
+  end
 
-  def cik_match(value)
-    value.respond_to?(:match) &&
-      value.match(/[0-9]{10}/) ||
-      false
+  def entries
+    @entries ||= super&.select {|e| ['13F-HR'].include?(e&.dig('category', 'term')) }
+                   .map {|data| Form13FHREntry.new(data) } || []
   end
 end
 
-class Form4Entry < FeedEntry
+class FeedEntry
+
   def initialize(data)
     @data = data
-  end
-
-  def to_h
-    {
-      cik: cik,
-      reporting_cik: reporting_cik,
-      issuer_cik: issuer_cik,
-      title: title,
-      term: term,
-      label: label,
-      summary: summary,
-      filing_detail_url: filing_detail_url,
-      sec_accession_number: sec_accession_number,
-      date_filed: date_filed,
-      account_number: account_number,
-      document_size_kb: document_size_kb
-    }
-  end
-
-  def cik
-    reporting_cik || issuer_cik
-  end
-
-  def reporting_cik
-    @data['title']&.to_s&.length > 0 &&
-      @data['title'].match(/\(Reporting\)/) &&
-        cik_match(@data['title'])&.to_s
-  end
-
-  def issuer_cik
-    @data['title']&.to_s&.length > 0 &&
-      @data['title'].match(/\(Issuer\)/) &&
-        cik_match(@data['title'])&.to_s
   end
 
   def title
@@ -156,5 +125,72 @@ class Form4Entry < FeedEntry
 
   def document_size_kb
     summary&.match(/Size:<\/b>\s[0-9]+\sKB/)&.to_s&.match(/[0-9]+/)&.to_s&.to_i
+  end
+
+  private
+
+  def cik_match(value)
+    value.respond_to?(:match) &&
+      value.match(/[0-9]{10}/) ||
+      false
+  end
+end
+
+class Form4Entry < FeedEntry
+  def to_h
+    {
+      cik: cik,
+      reporting_cik: reporting_cik,
+      issuer_cik: issuer_cik,
+      title: title,
+      term: term,
+      label: label,
+      summary: summary,
+      filing_detail_url: filing_detail_url,
+      sec_accession_number: sec_accession_number,
+      date_filed: date_filed,
+      account_number: account_number,
+      document_size_kb: document_size_kb
+    }
+  end
+
+  def cik
+    reporting_cik || issuer_cik
+  end
+
+  def reporting_cik
+    @data['title']&.to_s&.length > 0 &&
+      @data['title'].match(/\(Reporting\)/) &&
+        cik_match(@data['title'])&.to_s
+  end
+
+  def issuer_cik
+    @data['title']&.to_s&.length > 0 &&
+      @data['title'].match(/\(Issuer\)/) &&
+        cik_match(@data['title'])&.to_s
+  end
+end
+
+class Form13FHREntry < FeedEntry
+
+  def cik
+    @data['title']&.to_s&.length > 0 &&
+      @data['title'].match(/\(Filer\)/) &&
+      cik_match(@data['title'])&.to_s
+  end
+
+  def to_h
+    {
+      cik: cik,
+      title: title,
+      term: term,
+      label: label,
+      summary: summary,
+      filing_detail_url: filing_detail_url,
+      sec_accession_number: sec_accession_number,
+      date_filed: date_filed,
+      account_number: account_number,
+      document_size_kb: document_size_kb
+    }
   end
 end

@@ -36,9 +36,51 @@ RSpec.describe Feeder do
               "id"=>"urn:tag:sec.gov,2008:accession-number=0001140361-20-016682"}]}}
   end
 
+  let(:feed_hash2) do
+    {
+      "feed" => {
+        "xmlns"=>"http://www.w3.org/2005/Atom",
+        "title"=>"Latest Filings - Sat, 25 Jul 2020 16:10:28 EDT",
+        "link"=>[{"rel"=>"alternate", "href"=>"/cgi-bin/browse-edgar?action=getcurrent"}, {"rel"=>"self", "href"=>"/cgi-bin/browse-edgar?action=getcurrent"}],
+        "id"=>"https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent",
+        "author"=>{"name"=>"Webmaster", "email"=>"webmaster@sec.gov"},
+        "updated"=>"2020-07-25T16:10:28-04:00",
+        "entry"=> [
+          {
+            "title"=>"13F-HR - Ziegler Capital Management, LLC (0001307617) (Filer)",
+            "link"=>{"rel"=>"alternate", "type"=>"text/html", "href"=>"https://www.sec.gov/Archives/edgar/data/1307617/000108514620001887/0001085146-20-001887-index.htm"},
+            "summary"=>"\n <b>Filed:</b> 2020-07-24 <b>AccNo:</b> 0001085146-20-001887 <b>Size:</b> 196 KB\n",
+            "updated"=>"2020-07-24T17:28:53-04:00",
+            "category"=>{"scheme"=>"https://www.sec.gov/", "label"=>"form type", "term"=>"13F-HR"},
+            "id"=>"urn:tag:sec.gov,2008:accession-number=0001085146-20-001887"
+          },
+          {
+            "title"=>"13F-HR - BERKSHIRE HATHAWAY INC (0001067983) (Filer)",
+            "link"=>{"rel"=>"alternate", "type"=>"text/html", "href"=>"https://www.sec.gov/Archives/edgar/data/1760263/000108514620001885/0001085146-20-001885-index.htm"},
+            "summary"=>"\n <b>Filed:</b> 2020-07-24 <b>AccNo:</b> 0001085146-20-001885 <b>Size:</b> 24 KB\n",
+            "updated"=>"2020-07-24T17:24:02-04:00",
+            "category"=>{"scheme"=>"https://www.sec.gov/", "label"=>"form type", "term"=>"13F-HR"},
+            "id"=>"urn:tag:sec.gov,2008:accession-number=0001085146-20-001885"
+          },
+          {
+            "title"=>"13F-HR - Mechanics Bank Trust Department (0001439743) (Filer)",
+            "link"=>{"rel"=>"alternate", "type"=>"text/html", "href"=>"https://www.sec.gov/Archives/edgar/data/1439743/000108514620001886/0001085146-20-001886-index.htm"},
+            "summary"=>"\n <b>Filed:</b> 2020-07-24 <b>AccNo:</b> 0001085146-20-001886 <b>Size:</b> 133 KB\n",
+            "updated"=>"2020-07-24T17:15:29-04:00",
+            "category"=>{"scheme"=>"https://www.sec.gov/", "label"=>"form type", "term"=>"13F-HR"},
+            "id"=>"urn:tag:sec.gov,2008:accession-number=0001085146-20-001886"
+          }
+        ]
+      }
+    }
+  end
+
   it 'loads the feed' do
     allow(Form4Feed).to receive(:from_sec_rss).and_return(Form4Feed.new(feed_hash))
+    allow(Form13FHRFeed).to receive(:from_sec_rss).and_return(Form13FHRFeed.new(feed_hash2))
+
     handler_response = described_class.perform(event: nil, context: nil)
+
     expect(handler_response[:headers]).to eq({"Content-Type": "application/json"})
     expect(handler_response[:statusCode]).to eq 200
     response = JSON.parse(handler_response[:body])
@@ -57,9 +99,21 @@ RSpec.describe Feeder do
           "date_filed" => "2020-07-24",
           "account_number" => "0001140361-20-016682",
           "document_size_kb" => 23
+        },
+        {
+          "cik"=>"0001067983",
+          "title"=>"13F-HR - BERKSHIRE HATHAWAY INC (0001067983) (Filer)",
+          "term"=>"13F-HR",
+          "label"=>"form type",
+          "summary"=>"\n <b>Filed:</b> 2020-07-24 <b>AccNo:</b> 0001085146-20-001885 <b>Size:</b> 24 KB\n",
+          "filing_detail_url"=>"https://www.sec.gov/Archives/edgar/data/1760263/000108514620001885/0001085146-20-001885-index.htm",
+          "sec_accession_number"=>"0001085146-20-001885",
+          "date_filed"=>"2020-07-24",
+          "account_number"=>"0001085146-20-001885",
+          "document_size_kb"=>24
         }
       ]
     )
-    expect(response['total_count']).to eq(1)
+    expect(response['total_count']).to eq(2)
   end
 end

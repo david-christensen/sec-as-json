@@ -15,6 +15,16 @@ class Feeder
       end
     end
 
+    feed = Form13FHRFeed.from_sec_rss
+
+    feed.entries.each_with_object(reported) do |entry, found|
+      tracked = tracked_filing_map[entry.term]&.find {|t| t.cik == entry.cik}
+      if tracked
+        puts "Form #{entry.term} Filing Reported by #{tracked.fund_name}"
+        found << entry
+      end
+    end
+
     Response.success(
       filings_reported: reported.map(&:to_h),
       total_count: reported.count
