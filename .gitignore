@@ -125,7 +125,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -188,6 +187,7 @@ celerybeat-schedule.*
 
 # Environments
 .env
+.env.*
 .venv
 env/
 venv/
@@ -242,3 +242,9 @@ $RECYCLE.BIN/
 */build/*
 
 # End of https://www.gitignore.io/api/osx,linux,python,windows,pycharm,visualstudiocode
+
+layer/*
+!layer/.keep
+vendor/*
+
+.bundle/config

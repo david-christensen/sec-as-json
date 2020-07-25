@@ -2,10 +2,14 @@ source "https://rubygems.org"
 
 gem "httparty"
 gem 'graphql-client'
-gem 'dotenv'
+gem 'aws-sdk-ssm'
+gem 'dynamoid'
 
 group :test do
-  gem "test-unit"
+  gem 'dotenv'
+  gem "rspec"
   gem "mocha"
   gem "pry"
 end
+
+ruby '~> 2.7.0'
