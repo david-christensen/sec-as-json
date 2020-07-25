@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class FormFeed
   def initialize(rss)
     @rss = rss
@@ -11,15 +13,19 @@ class FormFeed
       count = 100
       puts "Paging through recent '#{type}' Filings"
       puts "Fetching Page #{(start / 100) + 1 }"
-      until start == 3000 # There appears to be a hard limit at 2000 filings
+      no_recent_filings = false
+      until start == 3000 || no_recent_filings # There appears to be a hard limit at 2000 filings
         url = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=#{type}&company=&dateb=&owner=only&start=#{start}&count=#{count}&output=atom"
-        file = open(url)
+        file = URI.open(url)
+        no_recent_filings = file.is_a?(StringIO) && file&.string&.include?('No recent filings') || false
+        next if no_recent_filings
         xml = File.read(file)
         @feed_pages << Hash.from_xml(xml)
         start += 100
         puts "Fetching Page #{(start / 100) + 1 }"
       end
-    rescue
+    rescue => e
+      puts "Uh oh - Unable to parse feed page - #{e} #{e.backtrace.join("\n")}"
       # /done
     ensure
       puts "Done Fetching Recent '#{type}' Filings"
@@ -35,7 +41,7 @@ class FormFeed
   end
 
   def entries
-    @rss.dig('feed', 'entry') || []
+    @rss && @rss.dig('feed', 'entry') || []
   end
 end
 
@@ -56,6 +62,15 @@ class Form4Feed < FormFeed
   def issued_entries
     entries.select {|e| e.issuer_cik }
   end
+
+  def to_h
+    {
+      reported_entries: reported_entries.map(&:to_h),
+      reported_entry_count: reported_entries.count,
+      issued_entries: issued_entries.map(&:to_h),
+      issued_entry_count: issued_entries.count
+    }
+  end
 end
 
 class FeedEntry
@@ -71,6 +86,23 @@ end
 class Form4Entry < FeedEntry
   def initialize(data)
     @data = data
+  end
+
+  def to_h
+    {
+      cik: cik,
+      reporting_cik: reporting_cik,
+      issuer_cik: issuer_cik,
+      title: title,
+      term: term,
+      label: label,
+      summary: summary,
+      filing_detail_url: filing_detail_url,
+      sec_accession_number: sec_accession_number,
+      date_filed: date_filed,
+      account_number: account_number,
+      document_size_kb: document_size_kb
+    }
   end
 
   def cik
