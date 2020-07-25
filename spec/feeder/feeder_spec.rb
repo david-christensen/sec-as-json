@@ -88,17 +88,17 @@ RSpec.describe Feeder do
       [
         {
           "cik" => "0000949509",
-          "reporting_cik" => "0000949509",
-          "issuer_cik" => nil,
+          "reportingCik" => "0000949509",
+          "issuerCik" => nil,
           "title" => "4 - OAKTREE CAPITAL MANAGEMENT LP (0000949509) (Reporting)",
           "term" => "4",
           "label" => "form type",
           "summary" => "\n <b>Filed:</b> 2020-07-24 <b>AccNo:</b> 0001140361-20-016682 <b>Size:</b> 23 KB\n",
-          "filing_detail_url" => "https://www.sec.gov/Archives/edgar/data/1819104/000114036120016682/0001140361-20-016682-index.htm",
-          "sec_accession_number" => "0001140361-20-016682",
-          "date_filed" => "2020-07-24",
-          "account_number" => "0001140361-20-016682",
-          "document_size_kb" => 23
+          "filingDetailUrl" => "https://www.sec.gov/Archives/edgar/data/1819104/000114036120016682/0001140361-20-016682-index.htm",
+          "secAccessionNumber" => "0001140361-20-016682",
+          "dateFiled" => "2020-07-24",
+          "accountNumber" => "0001140361-20-016682",
+          "documentSizeKb" => 23
         },
         {
           "cik"=>"0001067983",
@@ -106,14 +106,46 @@ RSpec.describe Feeder do
           "term"=>"13F-HR",
           "label"=>"form type",
           "summary"=>"\n <b>Filed:</b> 2020-07-24 <b>AccNo:</b> 0001085146-20-001885 <b>Size:</b> 24 KB\n",
-          "filing_detail_url"=>"https://www.sec.gov/Archives/edgar/data/1760263/000108514620001885/0001085146-20-001885-index.htm",
-          "sec_accession_number"=>"0001085146-20-001885",
-          "date_filed"=>"2020-07-24",
-          "account_number"=>"0001085146-20-001885",
-          "document_size_kb"=>24
+          "filingDetailUrl"=>"https://www.sec.gov/Archives/edgar/data/1760263/000108514620001885/0001085146-20-001885-index.htm",
+          "secAccessionNumber"=>"0001085146-20-001885",
+          "dateFiled"=>"2020-07-24",
+          "accountNumber"=>"0001085146-20-001885",
+          "documentSizeKb"=>24
         }
       ]
     )
     expect(response['total_count']).to eq(2)
+
+    reported_filings = ReportedFiling.all.to_a
+    expect(reported_filings.count).to eq 2
+
+    reported_filings.find {|f| f.cik == '0001067983' }.tap do |reported_filing|
+      expect(reported_filing.cik).to eq '0001067983'
+      expect(reported_filing.metadata).to start_with 'reported-filing-'
+      expect(reported_filing.type).to eq 'ReportedFiling'
+      expect(reported_filing.title).to eq '13F-HR - BERKSHIRE HATHAWAY INC (0001067983) (Filer)'
+      expect(reported_filing.term).to eq '13F-HR'
+      expect(reported_filing.summary).to eq "\n <b>Filed:</b> 2020-07-24 <b>AccNo:</b> 0001085146-20-001885 <b>Size:</b> 24 KB\n"
+      expect(reported_filing.filingDetailUrl).to eq "https://www.sec.gov/Archives/edgar/data/1760263/000108514620001885/0001085146-20-001885-index.htm"
+      expect(reported_filing.label).to eq "form type"
+      expect(reported_filing.secAccessionNumber).to eq "0001085146-20-001885"
+      expect(reported_filing.dateFiled).to eq "2020-07-24"
+    end
+
+    reported_filings.find {|f| f.cik == '0000949509' }.tap do |reported_filing|
+      expect(reported_filing.cik).to eq '0000949509'
+      expect(reported_filing.reportingCik).to eq '0000949509'
+      expect(reported_filing.metadata).to start_with 'reported-filing-'
+      expect(reported_filing.type).to eq 'ReportedFiling'
+      expect(reported_filing.title).to eq '4 - OAKTREE CAPITAL MANAGEMENT LP (0000949509) (Reporting)'
+      expect(reported_filing.term).to eq '4'
+      expect(reported_filing.summary).to eq "\n <b>Filed:</b> 2020-07-24 <b>AccNo:</b> 0001140361-20-016682 <b>Size:</b> 23 KB\n"
+      expect(reported_filing.filingDetailUrl).to eq "https://www.sec.gov/Archives/edgar/data/1819104/000114036120016682/0001140361-20-016682-index.htm"
+      expect(reported_filing.label).to eq "form type"
+      expect(reported_filing.secAccessionNumber).to eq "0001140361-20-016682"
+      expect(reported_filing.dateFiled).to eq "2020-07-24"
+    end
+
+    reported_filings.each {|f| f.destroy}
   end
 end

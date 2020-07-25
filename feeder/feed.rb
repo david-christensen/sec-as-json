@@ -140,17 +140,17 @@ class Form4Entry < FeedEntry
   def to_h
     {
       cik: cik,
-      reporting_cik: reporting_cik,
-      issuer_cik: issuer_cik,
+      reportingCik: reporting_cik,
+      issuerCik: issuer_cik,
       title: title,
       term: term,
       label: label,
       summary: summary,
-      filing_detail_url: filing_detail_url,
-      sec_accession_number: sec_accession_number,
-      date_filed: date_filed,
-      account_number: account_number,
-      document_size_kb: document_size_kb
+      filingDetailUrl: filing_detail_url,
+      secAccessionNumber: sec_accession_number,
+      dateFiled: date_filed,
+      accountNumber: account_number,
+      documentSizeKb: document_size_kb
     }
   end
 
@@ -186,11 +186,11 @@ class Form13FHREntry < FeedEntry
       term: term,
       label: label,
       summary: summary,
-      filing_detail_url: filing_detail_url,
-      sec_accession_number: sec_accession_number,
-      date_filed: date_filed,
-      account_number: account_number,
-      document_size_kb: document_size_kb
+      filingDetailUrl: filing_detail_url,
+      secAccessionNumber: sec_accession_number,
+      dateFiled: date_filed,
+      accountNumber: account_number,
+      documentSizeKb: document_size_kb
     }
   end
 end

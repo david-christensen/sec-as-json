@@ -33,6 +33,6 @@ RSpec.describe 'models' do
     expect(tracked_form_4).to be_a TrackedFiling
     expect(tracked_form_4.type).to eq '4'
     expect(tracked_form_4.metadata).to start_with 'tracked-filing-'
-    expect(tracked_form_4.fund_name).to eq 'ABRAMS CAPITAL MANAGEMENT, L.P.'
+    expect(tracked_form_4.fundName).to eq 'ABRAMS CAPITAL MANAGEMENT, L.P.'
   end
 end

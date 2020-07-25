@@ -147,7 +147,7 @@ class TrackedFiling < Filings
   include Dynamoid::Document
 
   field :metadata, :string, default: -> { "tracked-filing-#{SecureRandom.uuid}" }
-  field :fund_name
+  field :fundName
   field :type, :string, default: 'TrackedFiling'
   field :reported, :boolean
 
@@ -156,7 +156,7 @@ class TrackedFiling < Filings
   end
 
   validates_presence_of :type
-  validates_presence_of :fund_name
+  validates_presence_of :fundName
 
   def self.where(*args)
     chain = super(*args)
@@ -188,9 +188,9 @@ class TrackedFiling < Filings
 end
 
 # Filing entries of the SEC RSS Feed
-# TODO Split out into Form4FeedEntry, etc
-class FeedEntry < Filings
-  field :metadata, :string #, default: -> { "feed-entry-#{type}-#{secAccessionNumber}" }
+class ReportedFiling < Filings
+  field :metadata, :string, default: -> { "reported-filing-#{SecureRandom.uuid}" }
+  field :type, :string, default: 'ReportedFiling'
 
   field :reportingCik
   field :issuerCik
@@ -209,6 +209,20 @@ class FeedEntry < Filings
 
     def find(cik, term, secAccessionNumber)
       old_find(cik, range_key: "#{term}-#{secAccessionNumber}")
+    end
+
+    def where(*args)
+      chain = super(*args)
+      chain.query.reject! {|k, _v| k == :"metadata.in"}.merge!(:"metadata.begins_with" => "reported-filing-")
+      chain
+    end
+
+    def find_by_cik(cik)
+      where(cik: cik).all.to_a
+    end
+
+    def all
+      where({})
     end
 
     def merge_or_create(data)
