@@ -83,7 +83,7 @@ RSpec.describe SeedCompany do
 
   let(:brkb_response) do
     {
-      :metadata => "company",
+      :metadata => "Company",
       :tradingSymbol => "BRKB",
       :cik => "0001067983",
       :name => "BERKSHIRE HATHAWAY INC",
@@ -158,7 +158,7 @@ RSpec.describe SeedCompany do
 
     let(:cwh_response) do
       {
-        :metadata => "company",
+        :metadata => "Company",
         :tradingSymbol => "CWH",
         :cik => "0001669779",
         :name => "Camping World Holdings, Inc.",
@@ -198,7 +198,7 @@ RSpec.describe SeedCompany do
 
       expect { Company.find('0001669779') }.to raise_error do |error|
         expect(error).to be_a Dynamoid::Errors::RecordNotFound
-        expect(error.to_s).to eq "Couldn't find company with primary key (0001669779,company)"
+        expect(error.to_s).to eq "Couldn't find Company with primary key (0001669779,Company)"
       end
     end
   end

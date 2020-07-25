@@ -4,6 +4,20 @@ require 'response'
 class Feeder
   def self.perform(event:, context:)
     feed = Form4Feed.from_sec_rss
-    Response.success(feed.to_h)
+
+    tracked_filing_map = TrackedFiling.partitioned_reported
+
+    reported = feed.reported_entries.each_with_object([]) do |entry, found|
+      tracked = tracked_filing_map[entry.term]&.find {|t| t.cik == entry.cik}
+      if tracked
+        puts "Form #{entry.term} Filing Reported by #{tracked.fund_name}"
+        found << entry
+      end
+    end
+
+    Response.success(
+      filings_reported: reported.map(&:to_h),
+      total_count: reported.count
+    )
   end
 end

@@ -22,13 +22,13 @@ RSpec.describe Feeder do
               "updated"=>"2020-07-24T21:50:06-04:00",
               "category"=>{"scheme"=>"https://www.sec.gov/", "label"=>"form type", "term"=>"4"},
               "id"=>"urn:tag:sec.gov,2008:accession-number=0001104659-20-086571"},
-             {"title"=>"4 - RESTORATION HARDWARE INC (0000863821) (Issuer)",
+             {"title"=>"4 - OAKTREE CAPITAL MANAGEMENT LP (0000949509) (Issuer)",
               "link"=>{"rel"=>"alternate", "type"=>"text/html", "href"=>"https://www.sec.gov/Archives/edgar/data/863821/000110465920086571/0001104659-20-086571-index.htm"},
               "summary"=>"\n <b>Filed:</b> 2020-07-24 <b>AccNo:</b> 0001104659-20-086571 <b>Size:</b> 4 KB\n",
               "updated"=>"2020-07-24T21:50:06-04:00",
               "category"=>{"scheme"=>"https://www.sec.gov/", "label"=>"form type", "term"=>"4"},
               "id"=>"urn:tag:sec.gov,2008:accession-number=0001104659-20-086571"},
-             {"title"=>"4 - Brookfield BBP Canadian GP L.P. (0001819104) (Reporting)",
+             {"title"=>"4 - OAKTREE CAPITAL MANAGEMENT LP (0000949509) (Reporting)",
               "link"=>{"rel"=>"alternate", "type"=>"text/html", "href"=>"https://www.sec.gov/Archives/edgar/data/1819104/000114036120016682/0001140361-20-016682-index.htm"},
               "summary"=>"\n <b>Filed:</b> 2020-07-24 <b>AccNo:</b> 0001140361-20-016682 <b>Size:</b> 23 KB\n",
               "updated"=>"2020-07-24T21:39:04-04:00",
@@ -42,7 +42,24 @@ RSpec.describe Feeder do
     expect(handler_response[:headers]).to eq({"Content-Type": "application/json"})
     expect(handler_response[:statusCode]).to eq 200
     response = JSON.parse(handler_response[:body])
-    expect(response['reported_entry_count']).to eq(2)
-    expect(response['issued_entry_count']).to eq(1)
+    expect(response['filings_reported']).to eq(
+      [
+        {
+          "cik" => "0000949509",
+          "reporting_cik" => "0000949509",
+          "issuer_cik" => nil,
+          "title" => "4 - OAKTREE CAPITAL MANAGEMENT LP (0000949509) (Reporting)",
+          "term" => "4",
+          "label" => "form type",
+          "summary" => "\n <b>Filed:</b> 2020-07-24 <b>AccNo:</b> 0001140361-20-016682 <b>Size:</b> 23 KB\n",
+          "filing_detail_url" => "https://www.sec.gov/Archives/edgar/data/1819104/000114036120016682/0001140361-20-016682-index.htm",
+          "sec_accession_number" => "0001140361-20-016682",
+          "date_filed" => "2020-07-24",
+          "account_number" => "0001140361-20-016682",
+          "document_size_kb" => 23
+        }
+      ]
+    )
+    expect(response['total_count']).to eq(1)
   end
 end
