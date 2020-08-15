@@ -2,7 +2,7 @@ require "graphql/client"
 require "graphql/client/http"
 
 # Star Wars API example wrapper
-module SecOnJetsAPI
+module SecGraphAPI
   # Configure GraphQL endpoint using the basic HTTP network adapter.
   HTTP = GraphQL::Client::HTTP.new(ENV['SEC_ON_JETS_URL']) do
     def headers(context)
@@ -17,14 +17,14 @@ module SecOnJetsAPI
   Client = GraphQL::Client.new(schema: Schema, execute: HTTP)
 
   module Company
-    QUERY = SecOnJetsAPI::Client.parse <<-'GRAPHQL'
+    QUERY = SecGraphAPI::Client.parse <<-'GRAPHQL'
             query($id: String!) {
               company(id: $id) {
                 cik,
                 name,
                 cusip,
                 formerNames{date, name},
-                assistantDirector,
+                assitantDirector,
                 sicCode,
                 sicIndustryTitle,
                 sicListHref,
@@ -39,7 +39,7 @@ module SecOnJetsAPI
           GRAPHQL
 
     def self.get(id:)
-      result = SecOnJetsAPI::Client.query(
+      result = SecGraphAPI::Client.query(
         QUERY, variables: {id: id}
       )
       [result&.data&.company, result.errors]
@@ -47,7 +47,7 @@ module SecOnJetsAPI
   end
 
   module Filing
-    URL_QUERY = SecOnJetsAPI::Client.parse <<-'GRAPHQL'
+    URL_QUERY = SecGraphAPI::Client.parse <<-'GRAPHQL'
             query($id: String!,$url: String!) {
               filingByLink(id: $id, link: $url) {
                 filerCik,
@@ -79,7 +79,7 @@ module SecOnJetsAPI
 
 
     def self.get_by(id:, url:)
-      result = SecOnJetsAPI::Client.query(
+      result = SecGraphAPI::Client.query(
         URL_QUERY, variables: {id: id, url: url}
       )
       [result&.data&.find_by_link, result.errors]

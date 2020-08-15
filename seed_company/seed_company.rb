@@ -1,12 +1,12 @@
 require 'models'
-require 'sec_on_jets_api'
+require 'sec_graph_api'
 require_relative 'seed_company_params'
 
 class SeedCompany
   def self.perform(event:, context:)
     params = SeedCompanyParams.new(event: event, context: context)
     return params.error_response if params.error_response
-    company, errors = SecOnJetsAPI::Company.get(id: params.ticker || params.cik)
+    company, errors = SecGraphAPI::Company.get(id: params.ticker || params.cik)
 
     unless company
       puts "Errors finding Company: #{errors}"

@@ -89,7 +89,7 @@ RSpec.describe SeedCompany do
       :name => "BERKSHIRE HATHAWAY INC",
       :cusip => "084670702",
       :formerNames => [{:date => "1999-01-05", :name => "NBH INC"}],
-      :assistantDirector => nil,
+      :assitantDirector => nil,
       :sicCode => "6331",
       :sicIndustryTitle => "FIRE, MARINE &amp; CASUALTY INSURANCE",
       :sicListHref => "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=6331&owner=include&count=40",
@@ -165,7 +165,7 @@ RSpec.describe SeedCompany do
         # :cusip => "13462K109", # TODO: fix cusip lookup
         :cusip => nil,
         :formerNames => nil,
-        :assistantDirector => nil,
+        :assitantDirector => nil,
         :sicCode => "5500",
         :sicIndustryTitle => "RETAIL-AUTO DEALERS &amp; GASOLINE STATIONS",
         :sicListHref => "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=5500&owner=include&count=40",

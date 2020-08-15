@@ -66,7 +66,7 @@ class Company < Filings
   field :cusip
   field :tradingSymbol
   field :formerNames, JsonArray
-  field :assistantDirector
+  field :assitantDirector
   field :sicCode
   field :sicIndustryTitle
   field :sicListHref
@@ -103,7 +103,7 @@ class HedgeFund < Filings
   field :assignedSic
   field :assignedSicDesc
   field :assignedSicHref
-  field :assistantDirector
+  field :assitantDirector
   field :cikHref
   field :formerNames, JsonArray
   field :stateLocation
@@ -189,7 +189,7 @@ end
 
 # Filing entries of the SEC RSS Feed
 class ReportedFiling < Filings
-  field :metadata, :string, default: -> { "reported-filing-#{SecureRandom.uuid}" }
+  field :metadata, :string
   field :type, :string, default: 'ReportedFiling'
 
   field :reportingCik
@@ -203,6 +203,7 @@ class ReportedFiling < Filings
   field :dateFiled
 
   validates_presence_of :term
+  validates_presence_of :secAccessionNumber
 
   class << self
     alias_method :old_find, :find
