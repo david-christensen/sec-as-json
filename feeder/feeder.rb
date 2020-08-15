@@ -32,8 +32,10 @@ class Feeder
 
     pp response
 
-    reported.each do |data|
-      ReportedFiling.create!(data.to_h)
+    reported.each do |entry|
+      data = entry.to_h
+      data[:metadata] = "reported-filing-#{(data[:secAccessionNumber] || SecureRandom.uid)}"
+      ReportedFiling.create!(data)
     end
 
     Response.success(response)

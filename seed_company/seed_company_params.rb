@@ -33,7 +33,7 @@ class SeedCompanyParams
   end
 
   def ticker_valid?
-    ticker.match /^[A-Z]{1,5}$/
+    ticker.match(/^[A-Z]{1,5}$/) || ticker.match(/^[A-Z]{1,5}-[A-Z]{1}$/)
   end
 
   def error_response

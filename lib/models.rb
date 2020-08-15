@@ -23,7 +23,9 @@ module Dynamoid::Document
       return self unless attrs[inheritance_field]
 
       if attrs[inheritance_field].include?('-')
-        klass_name = attrs[inheritance_field].gsub(/-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}/, '').split('-').map{|str| str.capitalize}.join
+        klass_name_str = attrs[inheritance_field].gsub(/-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}/, '')
+        klass_name_str.gsub!(/-[0-9]+\-[0-9]+\-[0-9]+/, '')
+        klass_name = klass_name_str.split('-').map{|str| str.capitalize}.join
       else
         klass_name = attrs[inheritance_field]
       end
