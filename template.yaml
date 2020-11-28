@@ -41,9 +41,11 @@ Resources:
       Policies:
         - AmazonDynamoDBFullAccess
         - SSMParameterReadPolicy:
-            ParameterName: sec_on_jets/dev/SEC_ON_JETS_API_KEY
+            ParameterName: sec-as-json/dev/REPORTED_FILINGS_TOPIC
         - SSMParameterReadPolicy:
-            ParameterName: sec_on_jets/dev/SEC_ON_JETS_URL
+            ParameterName: sec_graph/dev/SEC_GRAPH_API_KEY
+        - SSMParameterReadPolicy:
+            ParameterName: sec_graph/dev/SEC_GRAPH_URL
 
   GetCompanyFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
@@ -70,9 +72,65 @@ Resources:
       Policies:
       - AmazonDynamoDBFullAccess
       - SSMParameterReadPolicy:
-          ParameterName: sec_on_jets/dev/SEC_ON_JETS_API_KEY
+          ParameterName: sec-as-json/dev/REPORTED_FILINGS_TOPIC
       - SSMParameterReadPolicy:
-          ParameterName: sec_on_jets/dev/SEC_ON_JETS_URL
+          ParameterName: sec_graph/dev/SEC_GRAPH_API_KEY
+      - SSMParameterReadPolicy:
+          ParameterName: sec_graph/dev/SEC_GRAPH_URL
+
+  SeedHedgeFundsFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: seed_hedge_funds/
+      Handler: app.lambda_handler
+      Runtime: ruby2.7
+      Layers:
+      - !Ref GemsAndLibLayer
+      Environment:
+        Variables:
+          LAMBDA_ENV: production
+      Policies:
+      - AmazonDynamoDBFullAccess
+      - SSMParameterReadPolicy:
+          ParameterName: sec-as-json/dev/REPORTED_FILINGS_TOPIC
+      - SSMParameterReadPolicy:
+          ParameterName: sec_graph/dev/SEC_GRAPH_API_KEY
+      - SSMParameterReadPolicy:
+          ParameterName: sec_graph/dev/SEC_GRAPH_URL
+
+  FilingsNotificationTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName: SEC Filing Notifications
+      TopicName: FilingsNotificationTopic
+
+  FeederFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: feeder/
+      Handler: app.lambda_handler
+      Runtime: ruby2.7
+      Timeout: 180
+      Layers:
+      - !Ref GemsAndLibLayer
+      Environment:
+        Variables:
+          LAMBDA_ENV: production
+      Events:
+        RunFeederEveryFiveMinutesEvent:
+          Type: Schedule
+          Properties:
+            Schedule: rate(5 minutes)
+      Policies:
+      - AmazonDynamoDBFullAccess
+      - SNSPublishMessagePolicy:
+          TopicName: FilingsNotificationTopic
+      - SSMParameterReadPolicy:
+          ParameterName: sec-as-json/dev/REPORTED_FILINGS_TOPIC
+      - SSMParameterReadPolicy:
+          ParameterName: sec_graph/dev/SEC_GRAPH_API_KEY
+      - SSMParameterReadPolicy:
+          ParameterName: sec_graph/dev/SEC_GRAPH_URL
 
   FilingsTable:
     Type: AWS::DynamoDB::Table

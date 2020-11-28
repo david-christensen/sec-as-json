@@ -4,10 +4,10 @@ require "graphql/client/http"
 # Star Wars API example wrapper
 module SecGraphAPI
   # Configure GraphQL endpoint using the basic HTTP network adapter.
-  HTTP = GraphQL::Client::HTTP.new(ENV['SEC_ON_JETS_URL']) do
+  HTTP = GraphQL::Client::HTTP.new(ENV['SEC_GRAPH_URL']) do
     def headers(context)
       # Optionally set any HTTP headers
-      { "Authorization": "Bearer #{ENV['SEC_ON_JETS_API_KEY']}" }
+      { "Authorization": "Bearer #{ENV['SEC_GRAPH_API_KEY']}" }
     end
   end
 

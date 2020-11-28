@@ -1398,36 +1398,5 @@
     "stateLocation": "NY",
     "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
     "stateOfIncorporation": null
-  },
-  {
-    "cik": "0001773994",
-    "cusip": "362393100",
-    "name": "Conifer Management, L.L.C.",
-    "mailingAddress": {
-      "type": "mailing",
-      "city": "NEW YORK",
-      "state": "NY",
-      "street1": "9 WEST 57TH STREET",
-      "street2": "SUITE 5000",
-      "zip": "10019"
-    },
-    "businessAddress": {
-      "type": "business",
-      "city": "NEW YORK",
-      "phone": "2128325280",
-      "state": "NY",
-      "street1": "9 WEST 57TH STREET",
-      "street2": "SUITE 5000",
-      "zip": "10019"
-    },
-    "assignedSic": null,
-    "assignedSicDesc": null,
-    "assignedSicHref": null,
-    "assitantDirector": null,
-    "cikHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001773994&owner=include&count=40",
-    "formerlyNames": null,
-    "stateLocation": "NY",
-    "stateLocationHref": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=NY&owner=include&count=40",
-    "stateOfIncorporation": null
   }
 ]

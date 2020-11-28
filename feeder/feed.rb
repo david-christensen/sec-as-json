@@ -19,7 +19,21 @@ class FormFeed
         file = URI.open(url)
         no_recent_filings = file.is_a?(StringIO) && file&.string&.include?('No recent filings') || false
         next if no_recent_filings
-        xml = File.read(file)
+        begin
+          xml = File.read(file)
+        rescue => e
+          if file.is_a?(StringIO)
+            if file&.string&.include?('<?xml')
+              xml = file.string
+            else
+              puts "Error unable to read file: #{file.string}"
+              raise e
+            end
+          else
+            puts "Error unable to read file: #{file}"
+            raise e
+          end
+        end
         @feed_pages << Hash.from_xml(xml)
         start += 100
         puts "Fetching Page #{(start / 100) + 1 }"

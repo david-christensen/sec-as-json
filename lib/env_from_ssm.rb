@@ -3,8 +3,9 @@ require 'aws-sdk-ssm'
 ssm = Aws::SSM::Client.new
 params = ssm.get_parameters(
   names: [
-    "/sec_on_jets/dev/SEC_ON_JETS_API_KEY",
-    "/sec_on_jets/dev/SEC_ON_JETS_URL"
+    "/sec-as-json/dev/REPORTED_FILINGS_TOPIC",
+    "/sec_graph/dev/SEC_GRAPH_API_KEY",
+    "/sec_graph/dev/SEC_GRAPH_URL"
   ], # required
   with_decryption: true
 )&.parameters
@@ -15,4 +16,4 @@ params.each do |param|
   ENV[env_var_name] = param['value']
 end
 
-puts "ENV['SEC_ON_JETS_URL'] ::: #{ENV['SEC_ON_JETS_URL']}"
+puts "ENV['SEC_GRAPH_URL'] ::: #{ENV['SEC_GRAPH_URL']}"
