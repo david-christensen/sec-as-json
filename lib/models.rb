@@ -21,9 +21,15 @@ module Dynamoid::Document
   module ClassMethods
     def choose_right_class(attrs)
       return self unless attrs[inheritance_field]
-      klass_name = attrs[inheritance_field].gsub(/-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}/, '').split('-').map{|str| str.capitalize}.join
 
-      # attrs[inheritance_field] ? attrs[inheritance_field].constantize : self
+      if attrs[inheritance_field].include?('-')
+        klass_name_str = attrs[inheritance_field].gsub(/-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}/, '')
+        klass_name_str.gsub!(/-[0-9]+\-[0-9]+\-[0-9]+/, '')
+        klass_name = klass_name_str.split('-').map{|str| str.capitalize}.join
+      else
+        klass_name = attrs[inheritance_field]
+      end
+
       klass_name&.constantize || self
     end
   end
@@ -54,15 +60,15 @@ end
 
 class Company < Filings
   def self.name
-    'company'
+    'Company'
   end
 
-  field :metadata, :string, default: -> { "company" }
+  field :metadata, :string, default: -> { 'Company' }
   field :name
   field :cusip
   field :tradingSymbol
   field :formerNames, JsonArray
-  field :assistantDirector
+  field :assitantDirector
   field :sicCode
   field :sicIndustryTitle
   field :sicListHref
@@ -77,7 +83,7 @@ class Company < Filings
     alias_method :old_find, :find
 
     def find(cik)
-      old_find(cik, range_key: 'company')
+      old_find(cik, range_key: 'Company')
     end
 
     def find_by_ticker(ticker)
@@ -92,14 +98,14 @@ class Company < Filings
 end
 
 class HedgeFund < Filings
-  field :metadata, :string, default: -> { "hedge-fund" }
+  field :metadata, :string, default: -> { name }
   field :name
   field :mailingAddress, :raw
   field :businessAddress, :raw
   field :assignedSic
   field :assignedSicDesc
   field :assignedSicHref
-  field :assistantDirector
+  field :assitantDirector
   field :cikHref
   field :formerNames, JsonArray
   field :stateLocation
@@ -110,18 +116,111 @@ class HedgeFund < Filings
     alias_method :old_find, :find
 
     def find(cik)
-      old_find(cik, range_key: 'hedge-fund')
+      old_find(cik, range_key: 'HedgeFund')
+    end
+  end
+end
+
+# module Dynamoid
+#   module Criteria
+#     # The criteria chain is equivalent to an ActiveRecord relation (and realistically I should change the name from
+#     # chain to relation). It is a chainable object that builds up a query and eventually executes it by a Query or Scan.
+#     class Chain
+#       def initialize(source)
+#         @query = {}
+#         @source = source
+#         @consistent_read = false
+#         @scan_index_forward = true
+#
+#         # Honor STI and :type field if it presents
+#         type = @source.inheritance_field
+#         if @source.attributes.key?(type)
+#           @query[:"#{type}.in"] = @source.deep_subclasses.map(&:name) << @source.name
+#         end
+#
+#         # we should re-initialize keys detector every time we change query
+#         @key_fields_detector = KeyFieldsDetector.new(@query, @source)
+#       end
+#     end
+#   end
+# end
+
+class Filing < Filings
+  def self.name
+    'Filing'
+  end
+
+  field :metadata, :string # filing-<secAccessionNumber>
+  field :type, :string
+
+  field :filerCik, :string
+  field :title, :string
+  field :summary, :string
+  field :document, :raw
+  field :filingDetailUrl, :string
+  field :secAccessionNumber, :string
+  field :dateFiled, :string
+
+  validates_presence_of :type
+  validates_presence_of :secAccessionNumber
+
+  class << self
+    alias_method :old_find, :find
+
+    def find(cik, secAccessionNumber)
+      old_find(cik, range_key: "filing-#{secAccessionNumber}")
+    rescue Dynamoid::Errors::RecordNotFound => e
+      nil
+    end
+
+    def where(*args)
+      chain = super(*args)
+      chain.query.reject! {|k, _v| k == :"metadata.in"}.merge!(:"metadata.begins_with" => "filing-")
+      chain
+    end
+
+    def find_by_cik(cik)
+      where(cik: cik).all.to_a
+    end
+
+    def all
+      where({})
+    end
+
+    def merge_or_create(raw_data)
+      data = {
+        cik: raw_data[:cik] || raw_data[:filerCik],
+        filerCik: raw_data[:filerCik],
+        metadata: "filing-#{raw_data[:secAccessionNumber]}",
+        type: raw_data[:type],
+        filingDetailUrl: raw_data[:detailHref],
+        dateFiled: raw_data[:date],
+        secAccessionNumber: raw_data[:secAccessionNumber],
+        title: raw_data[:title],
+        summary: raw_data[:summary],
+        document: raw_data[:document],
+      }.compact
+
+      filing = find(data[:cik], data[:secAccessionNumber]) || new(data)
+      [filing.persisted? ? filing.update_attributes(data) : filing.save, filing]
     end
   end
 end
 
 class TrackedFiling < Filings
+  include Dynamoid::Document
+
   field :metadata, :string, default: -> { "tracked-filing-#{SecureRandom.uuid}" }
-  field :fund_name
-  field :type
+  field :fundName
+  field :type, :string, default: 'TrackedFiling'
+  field :reported, :boolean
+
+  def self.name
+    'TrackedFiling'
+  end
 
   validates_presence_of :type
-  validates_presence_of :fund_name
+  validates_presence_of :fundName
 
   def self.where(*args)
     chain = super(*args)
@@ -131,5 +230,69 @@ class TrackedFiling < Filings
 
   def self.find_by_cik(cik)
     where(cik: cik).all.to_a
+  end
+
+  def self.all
+    where({})
+  end
+
+  def self.all_reported
+    all.to_a.select {|f| f.reported }
+  end
+
+  def self.partitioned_reported
+    found = all_reported
+    return found unless found.any?
+    filing_types = %w[4 13F-HR]
+    filing_types.each_with_object({}) do |filing_type, partitioned|
+      type_filings, found = found.partition {|f| f.type == filing_type }
+      partitioned[filing_type] = type_filings
+    end
+  end
+end
+
+# Filing entries of the SEC RSS Feed
+class ReportedFiling < Filings
+  field :metadata, :string
+  field :type, :string, default: 'ReportedFiling'
+
+  field :reportingCik
+  field :issuerCik
+  field :title
+  field :term
+  field :summary
+  field :label
+  field :filingDetailUrl
+  field :secAccessionNumber
+  field :dateFiled
+
+  validates_presence_of :term
+  validates_presence_of :secAccessionNumber
+
+  class << self
+    alias_method :old_find, :find
+
+    def find(cik, term, secAccessionNumber)
+      old_find(cik, range_key: "#{term}-#{secAccessionNumber}")
+    end
+
+    def where(*args)
+      chain = super(*args)
+      chain.query.reject! {|k, _v| k == :"metadata.in"}.merge!(:"metadata.begins_with" => "reported-filing-")
+      chain
+    end
+
+    def find_by_cik(cik)
+      where(cik: cik).all.to_a
+    end
+
+    def all
+      where({})
+    end
+
+    def merge_or_create(data)
+      company = find(data[:cik], data[:term], data[:secAccessionNumber]) || new(data)
+      [company.persisted? ? company.update_attributes(data) : company.save, company]
+    end
   end
 end

@@ -1,5 +1,5 @@
 require 'models'
-require 'sec_on_jets_api'
+require 'sec_graph_api'
 require_relative 'get_company_params'
 
 class GetCompany

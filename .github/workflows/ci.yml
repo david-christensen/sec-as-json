@@ -42,5 +42,5 @@ jobs:
           AWS_ACCESS_KEY_ID: X
           AWS_SECRET_ACCESS_KEY: X
           LAMBDA_ENV: test
-          SEC_ON_JETS_URL: ${{ secrets.SEC_ON_JETS_URL }}
-          SEC_ON_JETS_API_KEY: ${{ secrets.SEC_ON_JETS_API_KEY }}
+          SEC_GRAPH_URL: ${{ secrets.SEC_GRAPH_URL }}
+          SEC_GRAPH_API_KEY: ${{ secrets.SEC_GRAPH_API_KEY }}

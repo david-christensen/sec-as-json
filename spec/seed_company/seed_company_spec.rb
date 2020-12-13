@@ -2,7 +2,7 @@ require_relative '../spec_helper'
 require_relative '../../seed_company/seed_company'
 
 RSpec.describe SeedCompany do
-  let(:ticker) { 'BRKB' }
+  let(:ticker) { 'BRK-B' }
   let (:event) do
     {
       body: "{\n\t\"ticker\": \"#{ticker}\"\n}",
@@ -75,7 +75,7 @@ RSpec.describe SeedCompany do
 
   let(:expected_result) do
     {:body=>
-       "{\"ticker\":\"BRKB\",\"cik\":\"0000320193\",\"name\":\"Apple Inc.\",\"cusip\":\"037833100\",\"formerNames\":[{\"date\":\"2007-01-04\",\"name\":\"APPLE COMPUTER INC\"},{\"date\":\"1997-07-28\",\"name\":\"APPLE COMPUTER INC/ FA\"},{\"date\":\"2019-08-05\",\"name\":\"APPLE INC\"}],\"assitantDirector\":null,\"sicCode\":\"3571\",\"sicIndustryTitle\":\"ELECTRONIC COMPUTERS\",\"sicListHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=3571&owner=include&count=40\",\"stateOfIncorporation\":\"CA\",\"stateLocation\":\"CA\",\"stateLocationHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CA&owner=include&count=40\",\"cikHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193&owner=include&count=40\",\"businessAddress\":{\"type\":\"business\",\"city\":\"CUPERTINO\",\"state\":\"CA\",\"zip\":\"95014\",\"street1\":\"ONE APPLE PARK WAY\",\"street2\":null,\"phone\":\"(408) 996-1010\"},\"mailingAddress\":{\"type\":\"mailing\",\"city\":\"CUPERTINO\",\"state\":\"CA\",\"zip\":\"95014\",\"street1\":\"ONE APPLE PARK WAY\",\"street2\":null,\"phone\":null}}",
+       "{\"ticker\":\"BRK-B\",\"cik\":\"0000320193\",\"name\":\"Apple Inc.\",\"cusip\":\"037833100\",\"formerNames\":[{\"date\":\"2007-01-04\",\"name\":\"APPLE COMPUTER INC\"},{\"date\":\"1997-07-28\",\"name\":\"APPLE COMPUTER INC/ FA\"},{\"date\":\"2019-08-05\",\"name\":\"APPLE INC\"}],\"assitantDirector\":null,\"sicCode\":\"3571\",\"sicIndustryTitle\":\"ELECTRONIC COMPUTERS\",\"sicListHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=3571&owner=include&count=40\",\"stateOfIncorporation\":\"CA\",\"stateLocation\":\"CA\",\"stateLocationHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&State=CA&owner=include&count=40\",\"cikHref\":\"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193&owner=include&count=40\",\"businessAddress\":{\"type\":\"business\",\"city\":\"CUPERTINO\",\"state\":\"CA\",\"zip\":\"95014\",\"street1\":\"ONE APPLE PARK WAY\",\"street2\":null,\"phone\":\"(408) 996-1010\"},\"mailingAddress\":{\"type\":\"mailing\",\"city\":\"CUPERTINO\",\"state\":\"CA\",\"zip\":\"95014\",\"street1\":\"ONE APPLE PARK WAY\",\"street2\":null,\"phone\":null}}",
      :headers=>{:"Content-Type"=>"application/json"},
      :statusCode=>200
     }
@@ -83,13 +83,13 @@ RSpec.describe SeedCompany do
 
   let(:brkb_response) do
     {
-      :metadata => "company",
-      :tradingSymbol => "BRKB",
+      :metadata => "Company",
+      :tradingSymbol => "BRK-B",
       :cik => "0001067983",
       :name => "BERKSHIRE HATHAWAY INC",
       :cusip => "084670702",
       :formerNames => [{:date => "1999-01-05", :name => "NBH INC"}],
-      :assistantDirector => nil,
+      :assitantDirector => nil,
       :sicCode => "6331",
       :sicIndustryTitle => "FIRE, MARINE &amp; CASUALTY INSURANCE",
       :sicListHref => "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=6331&owner=include&count=40",
@@ -129,7 +129,7 @@ RSpec.describe SeedCompany do
                                 ), handler_response
   end
 
-  xit 'Seeds BRKB' do
+  it 'Seeds BRK-B' do
     handler_response = described_class.perform(event: event, context: '') # creates record
     parsed_response = JSON.parse(handler_response[:body]).deep_symbolize_keys
     expect(parsed_response.except(:updated_at)).to eq brkb_response
@@ -149,7 +149,7 @@ RSpec.describe SeedCompany do
 
     expect { Company.find('0001067983') }.to raise_error do |error|
       expect(error).to be_a Dynamoid::Errors::RecordNotFound
-      expect(error.to_s).to eq "Couldn't find Company with primary key (0001067983,company)"
+      expect(error.to_s).to eq "Couldn't find Company with primary key (0001067983,Company)"
     end
   end
 
@@ -158,14 +158,13 @@ RSpec.describe SeedCompany do
 
     let(:cwh_response) do
       {
-        :metadata => "company",
+        :metadata => "Company",
         :tradingSymbol => "CWH",
         :cik => "0001669779",
         :name => "Camping World Holdings, Inc.",
-        # :cusip => "13462K109", # TODO: fix cusip lookup
-        :cusip => nil,
+        :cusip => "13462K109",
         :formerNames => nil,
-        :assistantDirector => nil,
+        :assitantDirector => nil,
         :sicCode => "5500",
         :sicIndustryTitle => "RETAIL-AUTO DEALERS &amp; GASOLINE STATIONS",
         :sicListHref => "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&SIC=5500&owner=include&count=40",
@@ -198,7 +197,7 @@ RSpec.describe SeedCompany do
 
       expect { Company.find('0001669779') }.to raise_error do |error|
         expect(error).to be_a Dynamoid::Errors::RecordNotFound
-        expect(error.to_s).to eq "Couldn't find company with primary key (0001669779,company)"
+        expect(error.to_s).to eq "Couldn't find Company with primary key (0001669779,Company)"
       end
     end
   end

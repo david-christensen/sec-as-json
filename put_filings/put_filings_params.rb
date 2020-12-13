@@ -1,7 +1,7 @@
 require 'json'
 require 'response'
 
-class SeedCompanyParams
+class PutFilingsParams
   def initialize(event:, context:)
     @event = event
     @context = context
