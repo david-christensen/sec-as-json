@@ -54,7 +54,18 @@ module SecGraphAPI
                 title,
                 summary, 
                 document{
-                ... on Form13FHr {type}
+                ... on Form13FHr {
+                        type,
+                        holdings {
+                          nameOfIssuer,
+                          cusip,
+                          marketValue,
+                          titleOfClass,
+                          sharesOrPrincipal{amount, type},
+                          investmentDiscretion,
+                          votingAuthority{sole,shared,none}
+                        }
+                }
                 ... on Form4 {
                         type, periodOfReport, subjectToSection16, 
                         issuer {cik, name, tradingSymbol},
@@ -78,11 +89,33 @@ module SecGraphAPI
           GRAPHQL
 
 
+    GET_ALL_SHALLOW_QUERY = SecGraphAPI::Client.parse <<-'GRAPHQL'
+            query($id: String!,$type: String!) {
+              allFilings(id: $id, type: $type) {
+                filerCik,
+                title,
+                summary, 
+                detailHref,
+                type,
+                date,
+                secAccessionNumber
+              }
+            }
+    GRAPHQL
+
+
     def self.get_by(id:, url:)
       result = SecGraphAPI::Client.query(
         URL_QUERY, variables: {id: id, url: url}
       )
-      [result&.data&.find_by_link, result.errors]
+      [result&.data&.filing_by_link, result.errors]
+    end
+
+    def self.get_all_shallow(id:, type:)
+      result = SecGraphAPI::Client.query(
+        GET_ALL_SHALLOW_QUERY, variables: {id: id, type: type}
+      )
+      [result&.data&.all_filings, result.errors]
     end
   end
 end

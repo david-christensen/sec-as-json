@@ -145,6 +145,68 @@ end
 #   end
 # end
 
+class Filing < Filings
+  def self.name
+    'Filing'
+  end
+
+  field :metadata, :string # filing-<secAccessionNumber>
+  field :type, :string
+
+  field :filerCik, :string
+  field :title, :string
+  field :summary, :string
+  field :document, :raw
+  field :filingDetailUrl, :string
+  field :secAccessionNumber, :string
+  field :dateFiled, :string
+
+  validates_presence_of :type
+  validates_presence_of :secAccessionNumber
+
+  class << self
+    alias_method :old_find, :find
+
+    def find(cik, secAccessionNumber)
+      old_find(cik, range_key: "filing-#{secAccessionNumber}")
+    rescue Dynamoid::Errors::RecordNotFound => e
+      nil
+    end
+
+    def where(*args)
+      chain = super(*args)
+      chain.query.reject! {|k, _v| k == :"metadata.in"}.merge!(:"metadata.begins_with" => "filing-")
+      chain
+    end
+
+    def find_by_cik(cik)
+      where(cik: cik).all.to_a
+    end
+
+    def all
+      where({})
+    end
+
+    def merge_or_create(raw_data)
+      data = {
+        cik: raw_data[:cik] || raw_data[:filerCik],
+        filerCik: raw_data[:filerCik],
+        metadata: "filing-#{raw_data[:secAccessionNumber]}",
+        type: raw_data[:type],
+        filingDetailUrl: raw_data[:detailHref],
+        dateFiled: raw_data[:date],
+        secAccessionNumber: raw_data[:secAccessionNumber],
+        title: raw_data[:title],
+        summary: raw_data[:summary],
+        document: raw_data[:document],
+      }.compact
+
+      filing = find(data[:cik], data[:secAccessionNumber]) || new(data)
+      [filing.persisted? ? filing.update_attributes(data) : filing.save, filing]
+    end
+  end
+end
+
 class TrackedFiling < Filings
   include Dynamoid::Document
 
